@@ -14,6 +14,7 @@ import DedicationsModule from '@/components/DedicationsModule'
 import MenuSection from '@/components/MenuSection'
 import ConfirmedGuestsList from '@/components/ConfirmedGuestsList'
 import Footer from '@/components/Footer'
+import AnimatedIcons from '@/components/AnimatedIcons'
 
 export default function HomePage() {
   const router = useRouter()
@@ -170,6 +171,9 @@ export default function HomePage() {
 
             {/* Secciones del contenido */}
             <VotingModule />
+
+            {/* Iconos Animados */}
+            <AnimatedIcons />
             <ConfirmedGuestsList />
             <ContributionsSection />
             <EventInfo />
