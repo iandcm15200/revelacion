@@ -64,35 +64,75 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-pink-50 via-white to-blue-50">
       {/* Iconos decorativos animados - Ositos */}
       <div className="absolute top-10 left-10 bear-float">
-        <svg viewBox="0 0 100 100" className="w-16 h-16 opacity-30">
-          <circle cx="35" cy="35" r="10" fill="#F9A8D4"/>
-          <circle cx="65" cy="35" r="10" fill="#F9A8D4"/>
-          <circle cx="50" cy="45" r="18" fill="#FCA5CC"/>
-          <circle cx="43" cy="43" r="2" fill="#4A3728"/>
-          <circle cx="57" cy="43" r="2" fill="#4A3728"/>
-          <ellipse cx="50" cy="50" rx="3" ry="2" fill="#D4A574"/>
+        <svg viewBox="0 0 100 120" className="w-20 h-24 opacity-40">
+          {/* Globo rosa */}
+          <ellipse cx="30" cy="15" rx="12" ry="15" fill="#FFB6D9"/>
+          <ellipse cx="30" cy="14" rx="8" ry="11" fill="#FFC9E3"/>
+          <ellipse cx="28" cy="12" rx="4" ry="5" fill="#FFFFFF" opacity="0.6"/>
+          <path d="M 30 30 Q 28 38 30 45" stroke="#E8A5C8" strokeWidth="0.8" fill="none"/>
+          
+          {/* Estrella */}
+          <path d="M 15 8 L 16 11 L 19 11 L 17 13 L 18 16 L 15 14 L 12 16 L 13 13 L 11 11 L 14 11 Z" fill="#FFD700" opacity="0.7"/>
+          
+          {/* Osito */}
+          <ellipse cx="35" cy="60" rx="8" ry="9" fill="#D4A574"/>
+          <ellipse cx="55" cy="60" rx="8" ry="9" fill="#D4A574"/>
+          <circle cx="45" cy="68" r="14" fill="#E5C9A6"/>
+          <ellipse cx="45" cy="74" rx="8" ry="7" fill="#F5E6D3"/>
+          <ellipse cx="45" cy="72" rx="3" ry="2.5" fill="#4A3728"/>
+          <circle cx="40" cy="68" r="2" fill="#4A3728"/>
+          <circle cx="50" cy="68" r="2" fill="#4A3728"/>
+          <ellipse cx="45" cy="88" rx="12" ry="14" fill="#E5C9A6"/>
+          <ellipse cx="38" cy="100" rx="6" ry="8" fill="#D4A574"/>
+          <ellipse cx="52" cy="100" rx="6" ry="8" fill="#D4A574"/>
         </svg>
       </div>
 
       <div className="absolute top-20 right-20 bear-float">
-        <svg viewBox="0 0 100 100" className="w-20 h-20 opacity-30">
-          <circle cx="35" cy="35" r="10" fill="#93C5FD"/>
-          <circle cx="65" cy="35" r="10" fill="#93C5FD"/>
-          <circle cx="50" cy="45" r="18" fill="#60A5FA"/>
-          <circle cx="43" cy="43" r="2" fill="#4A3728"/>
-          <circle cx="57" cy="43" r="2" fill="#4A3728"/>
-          <ellipse cx="50" cy="50" rx="3" ry="2" fill="#D4A574"/>
+        <svg viewBox="0 0 100 120" className="w-24 h-28 opacity-40">
+          {/* Globos azules */}
+          <ellipse cx="65" cy="12" rx="10" ry="13" fill="#A8D5FF"/>
+          <ellipse cx="65" cy="11" rx="7" ry="9" fill="#C5E4FF"/>
+          <ellipse cx="63" cy="10" rx="3" ry="4" fill="#FFFFFF" opacity="0.6"/>
+          <path d="M 65 25 Q 63 33 65 40" stroke="#8CC4F0" strokeWidth="0.8" fill="none"/>
+          
+          <ellipse cx="80" cy="15" rx="12" ry="15" fill="#A8D5FF"/>
+          <ellipse cx="80" cy="14" rx="8" ry="11" fill="#C5E4FF"/>
+          <ellipse cx="78" cy="12" rx="4" ry="5" fill="#FFFFFF" opacity="0.6"/>
+          <path d="M 80 30 Q 78 38 80 45" stroke="#8CC4F0" strokeWidth="0.8" fill="none"/>
+          
+          {/* Estrella */}
+          <path d="M 88 8 L 89 11 L 92 11 L 90 13 L 91 16 L 88 14 L 85 16 L 86 13 L 84 11 L 87 11 Z" fill="#FFD700" opacity="0.7"/>
+          
+          {/* Osito */}
+          <ellipse cx="35" cy="60" rx="8" ry="9" fill="#D4A574"/>
+          <ellipse cx="55" cy="60" rx="8" ry="9" fill="#D4A574"/>
+          <circle cx="45" cy="68" r="14" fill="#E5C9A6"/>
+          <ellipse cx="45" cy="74" rx="8" ry="7" fill="#F5E6D3"/>
+          <ellipse cx="45" cy="72" rx="3" ry="2.5" fill="#4A3728"/>
+          <circle cx="40" cy="68" r="2" fill="#4A3728"/>
+          <circle cx="50" cy="68" r="2" fill="#4A3728"/>
+          <ellipse cx="45" cy="88" rx="12" ry="14" fill="#E5C9A6"/>
+          <ellipse cx="38" cy="100" rx="6" ry="8" fill="#D4A574"/>
+          <ellipse cx="52" cy="100" rx="6" ry="8" fill="#D4A574"/>
         </svg>
       </div>
 
       <div className="absolute bottom-20 left-20 bear-float">
-        <svg viewBox="0 0 100 100" className="w-14 h-14 opacity-30">
-          <circle cx="35" cy="35" r="10" fill="#E5C9A6"/>
-          <circle cx="65" cy="35" r="10" fill="#E5C9A6"/>
-          <circle cx="50" cy="45" r="18" fill="#D4A574"/>
-          <circle cx="43" cy="43" r="2" fill="#4A3728"/>
-          <circle cx="57" cy="43" r="2" fill="#4A3728"/>
-          <ellipse cx="50" cy="50" rx="3" ry="2" fill="#C9A26D"/>
+        <svg viewBox="0 0 80 100" className="w-16 h-20 opacity-35">
+          {/* Osito pequeño con estrella */}
+          <path d="M 40 8 L 42 13 L 47 13 L 43 16 L 45 21 L 40 18 L 35 21 L 37 16 L 33 13 L 38 13 Z" fill="#FFD700" opacity="0.8"/>
+          
+          <ellipse cx="28" cy="45" rx="7" ry="8" fill="#D4A574"/>
+          <ellipse cx="52" cy="45" rx="7" ry="8" fill="#D4A574"/>
+          <circle cx="40" cy="52" r="12" fill="#E5C9A6"/>
+          <ellipse cx="40" cy="57" rx="7" ry="6" fill="#F5E6D3"/>
+          <ellipse cx="40" cy="55" rx="2.5" ry="2" fill="#4A3728"/>
+          <circle cx="36" cy="52" r="1.5" fill="#4A3728"/>
+          <circle cx="44" cy="52" r="1.5" fill="#4A3728"/>
+          <ellipse cx="40" cy="70" rx="10" ry="12" fill="#E5C9A6"/>
+          <ellipse cx="34" cy="82" rx="5" ry="7" fill="#D4A574"/>
+          <ellipse cx="46" cy="82" rx="5" ry="7" fill="#D4A574"/>
         </svg>
       </div>
 
@@ -161,19 +201,101 @@ export default function LoginPage() {
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="inline-block mb-4"
             >
-              <svg viewBox="0 0 100 100" className="w-24 h-24">
-                {/* Osito central */}
-                <circle cx="30" cy="30" r="12" fill="#F9A8D4"/>
-                <circle cx="70" cy="30" r="12" fill="#93C5FD"/>
-                <circle cx="50" cy="45" r="22" fill="#FDE68A"/>
-                <circle cx="42" cy="43" r="3" fill="#4A3728"/>
-                <circle cx="58" cy="43" r="3" fill="#4A3728"/>
-                <ellipse cx="50" cy="52" rx="4" ry="3" fill="#D4A574"/>
-                <path d="M 43 56 Q 50 60 57 56" stroke="#D4A574" strokeWidth="2" fill="none"/>
-                {/* Cuerpo */}
-                <ellipse cx="50" cy="75" rx="18" ry="14" fill="#FDE68A"/>
-                <circle cx="40" cy="86" r="7" fill="#D4A574"/>
-                <circle cx="60" cy="86" r="7" fill="#D4A574"/>
+              <svg viewBox="0 0 200 240" className="w-32 h-40">
+                {/* Globos rosa */}
+                <g className="balloon-float">
+                  <ellipse cx="50" cy="30" rx="18" ry="22" fill="#FFB6D9" opacity="0.9"/>
+                  <ellipse cx="50" cy="28" rx="14" ry="18" fill="#FFC9E3"/>
+                  <ellipse cx="48" cy="25" rx="6" ry="8" fill="#FFFFFF" opacity="0.6"/>
+                  <path d="M 50 52 Q 48 65 50 70" stroke="#E8A5C8" strokeWidth="1" fill="none"/>
+                  
+                  <ellipse cx="70" cy="25" rx="16" ry="20" fill="#FFB6D9" opacity="0.9"/>
+                  <ellipse cx="70" cy="23" rx="12" ry="16" fill="#FFC9E3"/>
+                  <ellipse cx="68" cy="21" rx="5" ry="7" fill="#FFFFFF" opacity="0.6"/>
+                  <path d="M 70 45 Q 68 58 70 65" stroke="#E8A5C8" strokeWidth="1" fill="none"/>
+                </g>
+
+                {/* Globos azules */}
+                <g className="balloon-float">
+                  <ellipse cx="150" cy="30" rx="18" ry="22" fill="#A8D5FF" opacity="0.9"/>
+                  <ellipse cx="150" cy="28" rx="14" ry="18" fill="#C5E4FF"/>
+                  <ellipse cx="148" cy="25" rx="6" ry="8" fill="#FFFFFF" opacity="0.6"/>
+                  <path d="M 150 52 Q 152 65 150 70" stroke="#8CC4F0" strokeWidth="1" fill="none"/>
+                  
+                  <ellipse cx="130" cy="25" rx="16" ry="20" fill="#A8D5FF" opacity="0.9"/>
+                  <ellipse cx="130" cy="23" rx="12" ry="16" fill="#C5E4FF"/>
+                  <ellipse cx="128" cy="21" rx="5" ry="7" fill="#FFFFFF" opacity="0.6"/>
+                  <path d="M 130 45 Q 132 58 130 65" stroke="#8CC4F0" strokeWidth="1" fill="none"/>
+                </g>
+
+                {/* Estrellas doradas */}
+                <g className="heart-pulse">
+                  <path d="M 35 15 L 37 20 L 42 20 L 38 23 L 40 28 L 35 25 L 30 28 L 32 23 L 28 20 L 33 20 Z" fill="#FFD700" opacity="0.8"/>
+                  <path d="M 165 15 L 167 20 L 172 20 L 168 23 L 170 28 L 165 25 L 160 28 L 162 23 L 158 20 L 163 20 Z" fill="#FFD700" opacity="0.8"/>
+                  <path d="M 20 45 L 22 48 L 25 48 L 23 50 L 24 53 L 20 51 L 16 53 L 17 50 L 15 48 L 18 48 Z" fill="#FFD700" opacity="0.6"/>
+                  <path d="M 180 45 L 182 48 L 185 48 L 183 50 L 184 53 L 180 51 L 176 53 L 177 50 L 175 48 L 178 48 Z" fill="#FFD700" opacity="0.6"/>
+                </g>
+
+                {/* Cuerdas de los globos */}
+                <path d="M 50 70 Q 85 90 95 100" stroke="#E8A5C8" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                <path d="M 70 65 Q 92 85 98 95" stroke="#E8A5C8" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                <path d="M 150 70 Q 115 90 105 100" stroke="#8CC4F0" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                <path d="M 130 65 Q 108 85 102 95" stroke="#8CC4F0" strokeWidth="1.5" fill="none" opacity="0.6"/>
+
+                {/* Osito de peluche */}
+                <g>
+                  {/* Orejas */}
+                  <ellipse cx="75" cy="105" rx="12" ry="14" fill="#D4A574"/>
+                  <ellipse cx="75" cy="105" rx="8" ry="10" fill="#E5C9A6"/>
+                  <ellipse cx="125" cy="105" rx="12" ry="14" fill="#D4A574"/>
+                  <ellipse cx="125" cy="105" rx="8" ry="10" fill="#E5C9A6"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="100" cy="115" rx="28" ry="26" fill="#D4A574"/>
+                  <ellipse cx="100" cy="115" rx="24" ry="22" fill="#E5C9A6"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="100" cy="125" rx="16" ry="14" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="125" rx="12" ry="10" fill="#FFF4E6"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="100" cy="122" rx="5" ry="4" fill="#4A3728"/>
+                  <ellipse cx="98" cy="121" rx="2" ry="1.5" fill="#6B5D52" opacity="0.6"/>
+                  
+                  {/* Boca */}
+                  <path d="M 100 122 L 100 128" stroke="#4A3728" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M 92 130 Q 100 134 108 130" stroke="#4A3728" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Ojos */}
+                  <ellipse cx="88" cy="115" rx="4" ry="5" fill="#4A3728"/>
+                  <ellipse cx="87" cy="113" rx="1.5" ry="2" fill="#FFFFFF" opacity="0.8"/>
+                  <ellipse cx="112" cy="115" rx="4" ry="5" fill="#4A3728"/>
+                  <ellipse cx="111" cy="113" rx="1.5" ry="2" fill="#FFFFFF" opacity="0.8"/>
+                  
+                  {/* Cuerpo */}
+                  <ellipse cx="100" cy="165" rx="30" ry="32" fill="#D4A574"/>
+                  <ellipse cx="100" cy="165" rx="26" ry="28" fill="#E5C9A6"/>
+                  <ellipse cx="100" cy="170" rx="18" ry="20" fill="#F5E6D3"/>
+                  
+                  {/* Brazos */}
+                  <ellipse cx="70" cy="155" rx="10" ry="18" fill="#D4A574" transform="rotate(-20 70 155)"/>
+                  <ellipse cx="70" cy="155" rx="7" ry="14" fill="#E5C9A6" transform="rotate(-20 70 155)"/>
+                  <ellipse cx="130" cy="155" rx="10" ry="18" fill="#D4A574" transform="rotate(20 130 155)"/>
+                  <ellipse cx="130" cy="155" rx="7" ry="14" fill="#E5C9A6" transform="rotate(20 130 155)"/>
+                  
+                  {/* Patas */}
+                  <ellipse cx="85" cy="200" rx="12" ry="16" fill="#D4A574"/>
+                  <ellipse cx="85" cy="200" rx="9" ry="12" fill="#E5C9A6"/>
+                  <ellipse cx="85" cy="210" rx="10" ry="6" fill="#F5E6D3"/>
+                  
+                  <ellipse cx="115" cy="200" rx="12" ry="16" fill="#D4A574"/>
+                  <ellipse cx="115" cy="200" rx="9" ry="12" fill="#E5C9A6"/>
+                  <ellipse cx="115" cy="210" rx="10" ry="6" fill="#F5E6D3"/>
+                  
+                  {/* Moño azul */}
+                  <path d="M 95 100 Q 90 98 88 102 Q 90 105 95 103 Q 100 105 105 103 Q 110 105 112 102 Q 110 98 105 100 Q 100 95 95 100 Z" fill="#93C5FD"/>
+                  <ellipse cx="100" cy="101" rx="4" ry="3" fill="#60A5FA"/>
+                </g>
               </svg>
             </motion.div>
             
