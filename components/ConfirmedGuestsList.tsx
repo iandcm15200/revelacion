@@ -28,7 +28,7 @@ export default function ConfirmedGuestsList() {
       if (error) throw error
 
       // Ordenar por fecha de creación (más recientes primero)
-      const sortedGuests = (data || []).sort((a: any, b: any) => {
+      const sortedGuests = ((data || []) as Guest[]).sort((a, b) => {
         const dateA = new Date(a.created_at || 0).getTime()
         const dateB = new Date(b.created_at || 0).getTime()
         return dateB - dateA
