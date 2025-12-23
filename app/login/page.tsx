@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
-import anime from 'animejs'
+import * as anime from 'animejs'
 import { useGuestStore } from '@/store/guestStore'
 import { guestsDB } from '@/lib/supabase'
 

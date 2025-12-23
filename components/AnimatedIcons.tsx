@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import anime from 'animejs'
+import * as anime from 'animejs'
 
 export default function AnimatedIcons() {
   const iconsRef = useRef<HTMLDivElement>(null)
