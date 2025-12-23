@@ -10,7 +10,7 @@ export default function AnimatedIcons() {
     if (!iconsRef.current) return
 
     // Animación del biberón
-    const bottleAnimation = anime({
+    const bottleAnimation = anime.default({
       targets: '.bottle-icon__liquid',
       translateY: [20, -10, 0],
       opacity: [0, 1],
@@ -21,7 +21,7 @@ export default function AnimatedIcons() {
     })
 
     // Animación del chupete
-    anime({
+    anime.default({
       targets: '.pacifier-icon__circle',
       scale: [0.8, 1.1, 1],
       easing: 'easeOutElastic(1, .8)',
@@ -31,17 +31,17 @@ export default function AnimatedIcons() {
     })
 
     // Animación de los globos
-    anime({
+    anime.default({
       targets: '.balloon-icon__balloon',
       translateY: [0, -15, 0],
       easing: 'easeInOutSine',
       duration: 3000,
       loop: true,
-      delay: anime.stagger(200)
+      delay: anime.default.stagger(200)
     })
 
     // Animación del osito
-    anime({
+    anime.default({
       targets: '.teddy-icon__bear',
       rotate: [-5, 5, 0],
       easing: 'easeInOutSine',
@@ -50,7 +50,7 @@ export default function AnimatedIcons() {
     })
 
     // Animación del corazón
-    anime({
+    anime.default({
       targets: '.heart-icon__heart',
       scale: [1, 1.2, 1],
       easing: 'easeInOutQuad',

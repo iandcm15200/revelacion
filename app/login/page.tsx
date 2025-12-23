@@ -26,33 +26,33 @@ export default function LoginPage() {
   // Animaciones de iconos
   useEffect(() => {
     // Animación de ositos flotando
-    anime({
+    anime.default({
       targets: '.bear-float',
       translateY: [0, -15, 0],
       easing: 'easeInOutSine',
       duration: 3000,
       loop: true,
-      delay: anime.stagger(300)
+      delay: anime.default.stagger(300)
     })
 
     // Animación de globos
-    anime({
+    anime.default({
       targets: '.balloon-float',
       translateY: [0, -20, 0],
       easing: 'easeInOutSine',
       duration: 2500,
       loop: true,
-      delay: anime.stagger(200)
+      delay: anime.default.stagger(200)
     })
 
     // Animación de corazones
-    anime({
+    anime.default({
       targets: '.heart-pulse',
       scale: [1, 1.15, 1],
       easing: 'easeInOutQuad',
       duration: 1500,
       loop: true,
-      delay: anime.stagger(400)
+      delay: anime.default.stagger(400)
     })
   }, [])
 

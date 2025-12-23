@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
+import BackgroundMusic from '@/components/BackgroundMusic'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-sans antialiased">
+        <BackgroundMusic />
         {children}
       </body>
     </html>
