@@ -1224,7 +1224,7 @@ export default function LoginPage() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Siguiente ðŸŽ‰
+                Siguiente 
               </motion.button>
 
               <button
@@ -1243,7 +1243,7 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-base font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                  <span>ðŸ‘¤</span>
+                  <span></span>
                   Tu nombre
                 </label>
                 <input
@@ -1309,7 +1309,7 @@ export default function LoginPage() {
                     Entrando...
                   </span>
                 ) : (
-                  '¡Descubrir! ðŸŽ€ðŸ’™'
+                  '¡Descubrir! '
                 )}
               </motion.button>
             </form>
@@ -1318,13 +1318,13 @@ export default function LoginPage() {
           {/* Footer con decoraciñ³n */}
           <div className="mt-6 text-center">
             <div className="flex justify-center items-center gap-2 mb-2">
-              <span className="text-2xl">ðŸŽˆ</span>
-              <span className="text-2xl">ðŸ¼</span>
-              <span className="text-2xl">ðŸ‘¶</span>
-              <span className="text-2xl">ðŸŽ</span>
+              <span className="text-2xl"></span>
+              <span className="text-2xl"></span>
+              <span className="text-2xl"></span>
+              <span className="text-2xl"></span>
             </div>
             <p className="text-xs text-gray-500 font-medium">
-              Un momento muy especial ðŸ’—ðŸ’™
+              Un momento muy especial 
             </p>
           </div>
         </div>
