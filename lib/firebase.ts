@@ -25,10 +25,13 @@ const generateId = () => {
 export const guestsDB = {
   insert: async (data: any) => {
     try {
-      const id = generateId()
+      // Respetar el id y el timestamp que vienen del cliente para mantener consistencia
+      const id = data?.id || generateId()
+      const created_at = data?.created_at || new Date().toISOString()
+
       const guestRef = ref(database, `guests/${id}`)
-      await set(guestRef, { ...data, id, createdAt: new Date().toISOString() })
-      return { data: { ...data, id }, error: null }
+      await set(guestRef, { ...data, id, created_at })
+      return { data: { ...data, id, created_at }, error: null }
     } catch (error) {
       console.error('Error inserting guest:', error)
       return { data: null, error }
