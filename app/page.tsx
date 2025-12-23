@@ -7,6 +7,7 @@ import { useGuestStore } from '@/store/guestStore'
 import WelcomeAnimation from '@/components/WelcomeAnimation'
 import Navbar from '@/components/Navbar'
 import MusicPlayer from '@/components/MusicPlayer'
+import FloatingBearsBackground from '@/components/FloatingBears'
 import VotingModule from '@/components/VotingModule'
 import ContributionsSection from '@/components/ContributionsSection'
 import EventInfo from '@/components/EventInfo'
@@ -15,11 +16,12 @@ import MenuSection from '@/components/MenuSection'
 import ConfirmedGuestsList from '@/components/ConfirmedGuestsList'
 import Footer from '@/components/Footer'
 import AnimatedIcons from '@/components/AnimatedIcons'
+import ThemeManager from '@/components/ThemeManager'
 
 export default function HomePage() {
   const router = useRouter()
   const guest = useGuestStore((state) => state.guest)
-  const [showWelcome, setShowWelcome] = useState(true)
+  const [showWelcome, setShowWelcome] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -49,81 +51,43 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Manejador de temas */}
+      <ThemeManager />
+      
       {/* Animación de bienvenida */}
       {showWelcome && <WelcomeAnimation onComplete={handleWelcomeComplete} />}
 
       {/* Contenido principal */}
       {!showWelcome && (
         <>
+          {/* Fondo con ositos flotantes y degradado */}
+          <FloatingBearsBackground />
+          
           <Navbar />
           <MusicPlayer />
 
-          <main>
+          <main className="relative z-10">
             {/* Hero Section */}
             <section id="top" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-              {/* Decoraciones de fondo */}
-              <div className="absolute inset-0 pointer-events-none">
-                <motion.div
-                  className="absolute top-20 left-10 w-64 h-64 rounded-full bg-pink-200 opacity-30 blur-3xl"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    x: [0, 50, 0],
-                    y: [0, 30, 0],
-                  }}
-                  transition={{ duration: 10, repeat: Infinity }}
-                />
-                <motion.div
-                  className="absolute bottom-20 right-10 w-72 h-72 rounded-full bg-blue-200 opacity-30 blur-3xl"
-                  animate={{
-                    scale: [1, 1.3, 1],
-                    x: [0, -30, 0],
-                    y: [0, -50, 0],
-                  }}
-                  transition={{ duration: 12, repeat: Infinity }}
-                />
-              </div>
 
               {/* Contenido del Hero */}
               <div className="text-center relative z-10">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
-                  className="inline-block mb-8"
-                >
-                  <div className="w-32 h-32 bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 rounded-full flex items-center justify-center text-6xl shadow-2xl">
-                    👶
-                  </div>
-                </motion.div>
-
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-5xl md:text-7xl font-bold font-serif mb-6"
+                  className="text-4xl md:text-6xl font-bold mb-4 text-outlined"
                 >
-                  <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-                    ¿Niña o Niño?
-                  </span>
+                  ¿Niña o Niño?
                 </motion.h1>
 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="text-xl md:text-2xl text-gray-700 mb-4"
+                  className="text-xl md:text-2xl text-outlined mb-12"
                 >
-                  ¡Bienvenido, {guest?.name}!
-                </motion.p>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
-                >
-                  Únete a nosotros en este momento especial mientras descubrimos
-                  si nuestro pequeño tesoro será una princesa 💗 o un príncipe 💙
+                  ¡Haz tu predicción!
                 </motion.p>
 
                 <motion.div
@@ -134,15 +98,17 @@ export default function HomePage() {
                 >
                   <button
                     onClick={() => document.querySelector('#voting')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                    className="shimmer-btn shimmer-btn--pink"
                   >
-                    Hacer mi Predicción 🎯
+                    <span className="text">Hacer mi Predicción</span>
+                    <span className="shimmer" />
                   </button>
                   <button
                     onClick={() => document.querySelector('#event-info')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-pink-200"
+                    className="shimmer-btn shimmer-btn--pink"
                   >
-                    Ver Detalles del Evento 📅
+                    <span className="text">Ver Detalles del Evento</span>
+                    <span className="shimmer" />
                   </button>
                 </motion.div>
 
@@ -187,3 +153,5 @@ export default function HomePage() {
     </>
   )
 }
+
+

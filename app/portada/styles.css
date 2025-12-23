@@ -1,0 +1,140 @@
+/* Usa la fuente global Indie Flower */
+
+.portada-wrapper {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portada-wrapper ::selection {
+  background: transparent;
+}
+
+.portada-wrapper h4 {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.color1 {
+  color: #1BBC9B;
+}
+
+.color2 {
+  color: #C0392B;
+}
+
+.margin {
+  margin-bottom: 20px;
+}
+
+.card {
+  color: #013243;
+  width: 360px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: transform .8s ease, box-shadow .6s ease;
+}
+
+.card.open {
+  transform: perspective(2000px) rotate(8deg) scale(1.04);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+/* Quitar bordes 3D antiguos */
+.card:before { display: none; }
+
+.card:after { display: none; }
+
+.card .imgBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: transform .7s ease;
+}
+
+.card .bark { display: none; }
+
+.card .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 1;
+}
+
+.card.open .imgBox { transform: rotateY(-135deg); }
+
+.card.open .bark {
+  opacity: 1;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+}
+
+.card .details {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 0;
+  width: 100%;
+}
+
+.card .details p {
+  font-size: 15px;
+  line-height: 20px;
+  transform: none;
+  padding: 0;
+}
+
+.card .details p.intro {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card .details h4 {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+  padding-right: 30px !important;
+}
+
+/* El botón ahora usa .shimmer-btn desde globals.css */
+
+/* Layout auxiliar para apilar tarjeta y botón */
+.portada-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Tamaños responsivos mayores */
+@media (min-width: 640px) {
+  .card {
+    width: 420px;
+    height: 580px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 480px;
+    height: 640px;
+  }
+}

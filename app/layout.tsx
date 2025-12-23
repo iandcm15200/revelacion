@@ -1,20 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Indie_Flower, Oswald } from 'next/font/google'
 import './globals.css'
 import BackgroundMusic from '@/components/BackgroundMusic'
 
-const inter = Inter({ 
+const indieFlower = Indie_Flower({ 
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-geist-sans',
+  variable: '--font-indie',
 })
 
-const playfair = Playfair_Display({
+const oswald = Oswald({
+  weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-oswald',
 })
 
 export const metadata: Metadata = {
-  title: '¡Revelación de Género! 👶💗💙',
+  title: 'Revelación de Género',
   description: 'Únete a nosotros para descubrir si será niña o niño',
   keywords: 'revelación de género, baby shower, bebé, niña, niño',
 }
@@ -25,11 +27,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${indieFlower.variable} ${oswald.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-indie antialiased">
         <BackgroundMusic />
         {children}
       </body>

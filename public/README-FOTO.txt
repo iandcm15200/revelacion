@@ -4,12 +4,12 @@
 
 La imagen adjunta de la pareja debe ser guardada en esta ubicación:
 
-**Ruta exacta:** `C:\Users\iandc\Desktop\revelacion\public\couple-photo.jpg`
+**Ruta exacta (portada):** `C:\Users\iandc\Desktop\revelacion\public\portada-cover.jpg`
 
 ### Pasos:
 
 1. Localiza la imagen de la pareja que compartiste
-2. Renómbrala a: `couple-photo.jpg`
+2. Renómbrala a: `portada-cover.jpg`
 3. Cópiala en esta carpeta: `C:\Users\iandc\Desktop\revelacion\public\`
 
 ### Usando el Explorador de Windows:
@@ -17,7 +17,7 @@ La imagen adjunta de la pareja debe ser guardada en esta ubicación:
 ```
 1. Abre el Explorador de Windows
 2. Navega a: C:\Users\iandc\Desktop\revelacion\public\
-3. Pega la foto aquí con el nombre: couple-photo.jpg
+3. Pega la foto aquí con el nombre: portada-cover.jpg
 ```
 
 ### Características recomendadas de la imagen:
@@ -27,4 +27,4 @@ La imagen adjunta de la pareja debe ser guardada en esta ubicación:
 - **Tamaño máximo:** 2MB
 - **Calidad:** Alta resolución para mejor visualización
 
-Una vez agregada la foto, la animación de bienvenida la mostrará automáticamente.
+Una vez agregada la foto, la animación de portada la mostrará automáticamente.

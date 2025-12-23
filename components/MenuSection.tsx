@@ -23,8 +23,6 @@ const menuItems = {
 export default function MenuSection() {
   return (
     <section id="menu" className="py-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-beige-50 to-white pointer-events-none" />
-
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,10 +30,8 @@ export default function MenuSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
-            <span className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-              Menú del Evento
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-outlined">
+            Menu del Evento
           </h2>
           <p className="text-gray-600 text-lg">
             Disfruta de una deliciosa selección de platillos
@@ -44,16 +40,16 @@ export default function MenuSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Entradas */}
-          <MenuCategory title="🥗 Entradas" items={menuItems.entradas} color="pink" />
+          <MenuCategory title="Entradas" items={menuItems.entradas} color="pink" />
 
           {/* Platos Fuertes */}
-          <MenuCategory title="🍽️ Platos Fuertes" items={menuItems.platosFuertes} color="blue" />
+          <MenuCategory title="Platos Fuertes" items={menuItems.platosFuertes} color="blue" />
 
           {/* Postres */}
-          <MenuCategory title="🍰 Postres" items={menuItems.postres} color="pink" />
+          <MenuCategory title="Postres" items={menuItems.postres} color="pink" />
 
           {/* Bebidas */}
-          <MenuCategory title="🥤 Bebidas" items={menuItems.bebidas} color="blue" />
+          <MenuCategory title="Bebidas" items={menuItems.bebidas} color="blue" />
         </div>
 
         <motion.div
@@ -86,7 +82,7 @@ function MenuCategory({ title, items, color }: { title: string; items: any[]; co
       <h3 className="text-2xl font-bold mb-6 text-gray-800">{title}</h3>
       <div className="space-y-4">
         {items.map((item, index) => (
-          <div key={index} className="bg-white/70 backdrop-blur-sm rounded-xl p-4">
+          <div key={index} className="bg-white/40 backdrop-blur-sm rounded-xl p-4">
             <h4 className="font-semibold text-gray-800 mb-1">{item.name}</h4>
             <p className="text-sm text-gray-600">{item.description}</p>
           </div>

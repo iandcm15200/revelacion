@@ -18,13 +18,7 @@ export default function ConfirmedGuestsList() {
     loadGuests()
 
     // Suscribirse a cambios en tiempo real
-    const subscription = guestsDB.subscribe(() => {
-      loadGuests()
-    })
-
-    return () => {
-      subscription.unsubscribe()
-    }
+    guestsDB.subscribe(() => { loadGuests() })
   }, [])
 
   const loadGuests = async () => {
@@ -49,7 +43,7 @@ export default function ConfirmedGuestsList() {
   }
 
   return (
-    <section id="invitados" className="py-20 px-4 bg-gradient-to-br from-beige-50 via-white to-pink-50">
+    <section id="invitados" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Título */}
         <motion.div
@@ -58,10 +52,8 @@ export default function ConfirmedGuestsList() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
-            <span className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-              Invitados Confirmados
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-outlined">
+            Invitados Confirmados
           </h2>
           <p className="text-gray-600 text-lg">
             {guests.length > 0
@@ -83,24 +75,11 @@ export default function ConfirmedGuestsList() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-pink-200"
+                className="bg-white/40 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100/50 hover:border-pink-200"
               >
-                <div className="flex items-center gap-3">
-                  {/* Avatar circular con inicial */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-blue-400 flex items-center justify-center text-white font-bold text-xl shadow-md flex-shrink-0">
-                    {guest.name.charAt(0).toUpperCase()}
-                  </div>
-
-                  {/* Nombre */}
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-gray-800 truncate">
-                      {guest.name}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      ✓ Confirmado
-                    </p>
-                  </div>
-                </div>
+                <p className="font-semibold text-gray-800 text-center">
+                  {guest.name}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -110,45 +89,14 @@ export default function ConfirmedGuestsList() {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <span className="text-6xl mb-4 block">👥</span>
+            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-pink-400 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-2xl">?</div>
             <p className="text-gray-500 text-lg">
-              Sé el primero en confirmar tu asistencia
+              Se el primero en confirmar tu asistencia
             </p>
-          </motion.div>
-        )}
-
-        {/* Estadísticas adicionales */}
-        {guests.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <div className="inline-block bg-white/80 backdrop-blur-lg rounded-3xl p-6 shadow-xl border-2 border-pink-200">
-              <div className="flex items-center gap-6">
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl">🎉</span>
-                  <div className="text-left">
-                    <p className="text-2xl font-bold text-pink-600">{guests.length}</p>
-                    <p className="text-sm text-gray-600">Confirmados</p>
-                  </div>
-                </div>
-
-                <div className="w-px h-12 bg-gray-300"></div>
-
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl">💝</span>
-                  <div className="text-left">
-                    <p className="text-2xl font-bold text-blue-600">¡Gracias!</p>
-                    <p className="text-sm text-gray-600">Por acompañarnos</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </motion.div>
         )}
       </div>
     </section>
   )
 }
+

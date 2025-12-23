@@ -39,8 +39,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        indie: ['var(--font-indie)', 'cursive'],
+        sans: ['var(--font-indie)', 'cursive'],
+        serif: ['var(--font-indie)', 'cursive'],
       },
       animation: {
         'shred': 'shred 10s linear forwards',

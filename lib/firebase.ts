@@ -1,6 +1,6 @@
 // Firebase configuration
 import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, push, set, onValue, get } from 'firebase/database'
+import { getDatabase, ref, push, set, onValue, get, remove } from 'firebase/database'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAC-LumMPhqeCZkTYL9XOQT0Ls_m8I_tnI",
@@ -147,5 +147,24 @@ export const dedicationsDB = {
       }
     })
     return unsubscribe
+  }
+}
+
+// Función para limpiar toda la base de datos
+export const clearAllData = async () => {
+  try {
+    const guestsRef = ref(database, 'guests')
+    const votesRef = ref(database, 'votes')
+    const dedicationsRef = ref(database, 'dedications')
+    
+    await remove(guestsRef)
+    await remove(votesRef)
+    await remove(dedicationsRef)
+    
+    console.log('✅ Base de datos limpiada exitosamente')
+    return { success: true, error: null }
+  } catch (error) {
+    console.error('Error limpiando base de datos:', error)
+    return { success: false, error }
   }
 }

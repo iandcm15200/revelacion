@@ -22,13 +22,7 @@ export default function DedicationsModule() {
     loadDedications()
 
     // Suscribirse a cambios en tiempo real
-    const subscription = dedicationsDB.subscribe(() => {
-      loadDedications()
-    })
-
-    return () => {
-      subscription.unsubscribe()
-    }
+    dedicationsDB.subscribe(() => { loadDedications() })
   }, [])
 
   const onSubmit = async (data: DedicationForm) => {
@@ -78,7 +72,7 @@ export default function DedicationsModule() {
   }
 
   return (
-    <section id="dedications" className="py-20 px-4 bg-gradient-to-b from-white to-beige-50">
+    <section id="dedications" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Título */}
         <motion.div
@@ -87,10 +81,8 @@ export default function DedicationsModule() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
-            <span className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-              Dedicatorias para el Bebé
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-outlined">
+            Dedicatorias para el Bebe
           </h2>
           <p className="text-gray-600 text-lg">
             Deja tus mejores deseos y mensajes de amor
@@ -103,9 +95,15 @@ export default function DedicationsModule() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
+            className="bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">✍️ Escribe tu Dedicatoria</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+              <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                <path d="m15 5 4 4" />
+              </svg>
+              Escribe tu Dedicatoria
+            </h3>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div>
@@ -140,9 +138,10 @@ export default function DedicationsModule() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-gradient-to-r from-pink-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all disabled:opacity-50"
+                className="shimmer-btn shimmer-btn--pink w-full"
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar Dedicatoria 💌'}
+                <span className="text">{isSubmitting ? 'Enviando...' : 'Enviar Dedicatoria'}</span>
+                <span className="shimmer" />
               </button>
             </form>
           </motion.div>
@@ -152,9 +151,9 @@ export default function DedicationsModule() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl max-h-[600px] overflow-y-auto"
+            className="bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-xl max-h-[600px] overflow-y-auto"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">💝 Muro de Dedicatorias</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Muro de Dedicatorias</h3>
 
             <div className="space-y-4">
               {dedications.length === 0 ? (
@@ -184,3 +183,4 @@ export default function DedicationsModule() {
     </section>
   )
 }
+

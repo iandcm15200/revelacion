@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useGuestStore } from '@/store/guestStore'
 import { useVotingStore } from '@/store/votingStore'
 import { votesDB } from '@/lib/supabase'
+import AnimatedBaby from './AnimatedBaby'
 
 export default function VotingModule() {
   const guest = useGuestStore((state) => state.guest)
@@ -22,13 +23,7 @@ export default function VotingModule() {
     checkUserVote()
 
     // Suscribirse a cambios en tiempo real
-    const subscription = votesDB.subscribe(() => {
-      loadVotes()
-    })
-
-    return () => {
-      subscription.unsubscribe()
-    }
+    votesDB.subscribe(() => { loadVotes() })
   }, [guest])
 
   const loadVotes = async () => {
@@ -121,10 +116,8 @@ export default function VotingModule() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
-            <span className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-              ¿Niña o Niño?
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-outlined">
+            ¿Niña o Niño?
           </h2>
           <p className="text-gray-600 text-lg mb-8">
             {hasVoted ? '¡Gracias por tu voto!' : '¡Haz tu predicción!'}
@@ -135,7 +128,7 @@ export default function VotingModule() {
             <label className="block text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wide">
               Selecciona tu predicción
             </label>
-            <div className="relative inline-flex p-1.5 bg-white border-2 border-gray-300 rounded-2xl shadow-lg">
+            <div className="relative inline-flex p-1.5 bg-white/40 border-2 border-gray-300 rounded-2xl shadow-lg">
               {/* Team Niña */}
               <motion.button
                 onClick={() => handleVote('girl')}
@@ -149,10 +142,7 @@ export default function VotingModule() {
                     : 'text-gray-700 hover:bg-pink-50 cursor-pointer'
                 } ${isVoting ? 'cursor-wait' : ''}`}
               >
-                <span className="flex items-center gap-3">
-                  <span className="text-3xl">💗</span>
-                  <span>Team Niña</span>
-                </span>
+                <span>Niña</span>
               </motion.button>
 
               {/* Team Niño */}
@@ -168,10 +158,7 @@ export default function VotingModule() {
                     : 'text-gray-700 hover:bg-blue-50 cursor-pointer'
                 } ${isVoting ? 'cursor-wait' : ''}`}
               >
-                <span className="flex items-center gap-3">
-                  <span className="text-3xl">💙</span>
-                  <span>Team Niño</span>
-                </span>
+                <span>Niño</span>
               </motion.button>
             </div>
           </div>
@@ -187,12 +174,14 @@ export default function VotingModule() {
             className={`p-6 rounded-2xl shadow-lg transition-all duration-300 ${
               userVote === 'girl'
                 ? 'bg-pink-100 border-2 border-pink-400'
-                : 'bg-white border-2 border-gray-200'
+                : 'bg-white/40 border-2 border-gray-200/50'
             }`}
           >
             <div className="flex flex-col items-center">
-              <span className="text-5xl mb-3">👶🏻💗</span>
-              <h3 className="text-2xl font-bold mb-2 text-pink-600">Team Niña</h3>
+              <div className="mb-3">
+                <AnimatedBaby color="pink" size={70} />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-pink-600">Niña</h3>
               <p className="text-4xl font-bold text-pink-800">{girlVotes}</p>
               <p className="text-sm text-gray-600">votos</p>
             </div>
@@ -206,12 +195,14 @@ export default function VotingModule() {
             className={`p-6 rounded-2xl shadow-lg transition-all duration-300 ${
               userVote === 'boy'
                 ? 'bg-blue-100 border-2 border-blue-400'
-                : 'bg-white border-2 border-gray-200'
+                : 'bg-white/40 border-2 border-gray-200/50'
             }`}
           >
             <div className="flex flex-col items-center">
-              <span className="text-5xl mb-3">👶🏻💙</span>
-              <h3 className="text-2xl font-bold mb-2 text-blue-600">Team Niño</h3>
+              <div className="mb-3">
+                <AnimatedBaby color="blue" size={70} />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-blue-600">Niño</h3>
               <p className="text-4xl font-bold text-blue-800">{boyVotes}</p>
               <p className="text-sm text-gray-600">votos</p>
             </div>
@@ -223,7 +214,7 @@ export default function VotingModule() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
+          className="bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
         >
           <h3 className="text-2xl font-semibold text-center mb-6 text-gray-800">
             Resultados en tiempo real
@@ -234,7 +225,7 @@ export default function VotingModule() {
             {/* Barra Niña */}
             <div>
               <div className="flex justify-between mb-2">
-                <span className="font-semibold text-pink-600">Team Niña 💗</span>
+                <span className="font-semibold text-pink-600">Niña</span>
                 <span className="font-bold text-pink-600">{girlPercentage}%</span>
               </div>
               <div className="h-8 bg-gray-200 rounded-full overflow-hidden">
@@ -252,7 +243,7 @@ export default function VotingModule() {
             {/* Barra Niño */}
             <div>
               <div className="flex justify-between mb-2">
-                <span className="font-semibold text-blue-600">Team Niño 💙</span>
+                <span className="font-semibold text-blue-600">Niño</span>
                 <span className="font-bold text-blue-600">{boyPercentage}%</span>
               </div>
               <div className="h-8 bg-gray-200 rounded-full overflow-hidden">
@@ -279,3 +270,4 @@ export default function VotingModule() {
     </section>
   )
 }
+

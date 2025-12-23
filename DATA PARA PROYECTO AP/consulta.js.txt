@@ -1,0 +1,247 @@
+var dataSrc = [];
+var dataSrcLead = [];
+var resultLead = null;
+var valMultiSelect = "todosLeads";
+var table;
+var estatusAlumno = [];
+var tipoAlumno = [];
+var leadarr = objLeadId();
+$(document).ready(function () {
+    setFechaNueva();
+    $("#mainContainer").removeClass();
+    $("#mainContainer").addClass("container-fluid");
+    advancedSearch();
+    ConsultaAlumnos();
+    configuraFecha("#strFechaHoraFinMasivo");
+    $('#bulk_modal').modal({ keyboard: false, backdrop: 'static', show: false });
+    $('#moadlAsign').modal({ keyboard: false, backdrop: 'static', show: false });
+});
+function filtraLead(val) {
+    valMultiSelect = val.value;
+    switch (val.value) {
+        case "MyNuevosLeads":
+            $("#leadOptions").text("Leads nuevos");
+            break;
+        case "todosMyLeads":
+            $("#leadOptions").text("Todos los leads");
+            break;
+        case "myActAgendadas":
+            $("#leadOptions").text("Actividades agendadas");
+            break;
+        case "searchEmail":
+            $("#busquedabtn").text("Búsqueda por email");
+            break;
+        case "searchPhone":
+            $("#busquedabtn").text("Búsqueda por teléfono");
+            break;
+        case "searchID":
+            $("#busquedabtn").text("Búsqueda por ID");
+            break;
+        case "emptySearch":
+            $("#busquedabtn").text("Búsqueda");
+            $("#search-field").val("");
+            break;
+    }
+    if (valMultiSelect === "MyNuevosLeads" || valMultiSelect === "myActVencidas" || valMultiSelect === "ActVencidas") {
+        $('#FechaLead').hide();
+        setFechaNueva();
+    }
+    else {
+        $('#FechaLead').show();
+        setFechaNueva();
+    }
+}
+
+//Funcinalida para la tabla de detalles de lead
+function ConsultaAlumnos() {
+    chkEstatusAlumno();
+    chkTipoAlumno();
+    table = $("#GridLead").DataTable({
+        destroy: true,
+        //"dom": 't<"controls align-items-center"<"col info"i><"col-auto"p>>',
+        "processing": true,
+        "serverSide": true,
+        "filter": false,
+        "order": [],
+        "orderMulti": false,
+        "pageLength": 5,
+        "lengthChange": false,
+        "language": AP.gridLanguage,
+        "ajax": {
+            "url": AP.urlAP + "/Alumno/Consulta/Consultar",
+            "type": "POST",
+            "datatype": "json",
+            data: function (d) {
+                d.UserLeads= valMultiSelect;
+                d.tipoAlumno= tipoAlumno.join(",");
+                d.estatusAlumno= estatusAlumno.join(",");
+                d.ProgramaEstudioId = $("#cmbProgramaEstudioId").val();
+                d.ConSaldo = $("#cmbConSaldo").val();
+                d.PeriodoInscripcionId = $("#cmbPeriodoInscripcionId").val();
+                d.FechaHoraInicio= $("#FechaHoraInicio").val();
+                d.FechaHoraFin= $("#FechaHoraFin").val();
+                d.txtSearch= $("#search-field").val();
+                return d;
+            },
+            dataSrc: function (json)
+            {
+                if (json.data != null)
+                {
+                    return json.data;
+                }
+                else {
+                    return []
+                }
+                
+            }
+        },
+        "columns": [
+            { "data": "NombreCompleto", "name": "NombreCompleto", "autoWidth": true, className: "name" },
+            {
+                "orderable": false, "render": function (data, type, row, meta) {
+                    return '<a href="#" id=' + "consulta" + row.Id + ' class="m-0" onclick="redirectConsultaLead(' + row.Id + ')" role="button" title="Ver toda la información del alumno">' + row.Email + '<br/>' + row.Telefono + '</a>';
+                }
+            },
+            { "data": "Programa", "name": "Programa", "autoWidth": true, className: "last-activity" },
+            { "data": "Matricula", "name": "Matricula", "autoWidth": true, className: "name" },
+            { "data": "ConSaldo", "name": "ConSaldo", "autoWidth": true, className: "last-activity" },
+            { "data": "UltimoCiclo", "name": "UltimoCiclo", "autoWidth": true, className: "last-activity" },
+            { "data": "TipoAlumno", "name": "TipoAlumno", "autoWidth": true, className: "interest-level" },
+            { "data": "EstatusAlumno", "name": "EstatusAlumno", "autoWidth": true, className: "interest-level" },
+            //{ "data": "Periodo", "name": "Periodo", "autoWidth": true, className: "interest-level" },
+            {
+                "orderable": false, "render": function (data, type, row, meta) {
+                    return '<a href="#" role="button" data-toggle="modal"  class="btn-icon" data-target="#lstleadActivity" onclick="ListaActividad(' + row.Id + ')" title="Ver listados de actividades" class="activities"><span class="fa fa-list"></span>';
+                }
+            }
+        ]
+    });
+    showHidenColumns(table);
+}
+
+function showHidenColumns(table) {
+    $('th.tools input[type="checkbox"]').on('change', function (e) {
+        e.preventDefault();
+        if ($(this).is(':checked')) {
+            table.column($(this).attr('data-column')).visible(true);
+        } else {
+            table.column($(this).attr('data-column')).visible(false);
+        }
+    });
+}
+function ListaActividad(LeadId) {
+    $('#LeadPrograma_Id').val(LeadId);
+    var data = { LeadId: LeadId };
+    var url = AP.urlAP + "/Ventas/Actividad/ListaActividades";
+    ajaxSubmit(url, 'POST', data, RenderPartialListaActividad, null, null, RespuestaError);
+}
+function RenderPartialListaActividad(data) {
+    $('#ListaActividadLead').html(data);
+    ConsultaActividadLead();
+    ConsultaActividadesLead();
+}
+function RespuestaError(data) {
+    alert('Error');
+    AP.Modal.Hide();
+
+}
+function redirectConsultaLead(LeadPrograma_Id) {
+    var urlLead = AP.urlAP + '/Ventas/Consulta/Lead/' + LeadPrograma_Id;
+    //var urlLead = AP.urlAP + '/Universidad/Alumno/Consulta/' + LeadPrograma_Id;
+    window.open(urlLead, "_blank");
+}
+function chkTipoAlumno() {
+    tipoAlumno = [];
+    $.each($("input[name='tipoalumno']:checked"), function () {
+        tipoAlumno.push($(this).val());
+    });
+}
+function chkEstatusAlumno() {
+    estatusAlumno = [];
+    $.each($("input[name='estatusalumno']:checked"), function () {
+        estatusAlumno.push($(this).val());
+    });
+}
+function setFechaNueva() {
+    configuraFecha('#FechaHoraInicio');
+    $('#FechaHoraInicio').val(DateRange(3));
+    configuraFecha('#FechaHoraFin');
+    $('#FechaHoraFin').val(DateRange(0));
+}
+function configuraFecha(tagId) {
+    $(tagId).val("");
+    $(tagId).datetimepicker({
+        format: 'DD/MM/YYYY', locale: 'es', useCurrent: false, ignoreReadonly: true,
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar-minus-o",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
+    });
+}
+function getFechaLead(tagId) {
+    var txtDate = $(tagId).val();
+    txtDate = moment.utc(txtDate, 'DD/MM/YYYY HH:mm').format('DD/MM/YYYY HH:mm');
+    $(tagId).val("");
+    $(tagId).datetimepicker({
+        format: 'DD/MM/YYYY HH:mm', locale: 'es', useCurrent: false, ignoreReadonly: true,
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar-minus-o",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
+    });
+    $(tagId).datetimepicker('date', txtDate);
+}
+function dataAsignacion() {
+    rendererValidator();
+    var fechaFin = $("#reasignacion_strFechaFin").val();
+    if (fechaFin === "01/01/0001 00:00") {
+        configuraFecha("#reasignacion_strFechaFin");
+    } else {
+        getFechaLead("#reasignacion_strFechaFin");
+
+    }
+}
+
+function objLeadId() {
+    var leads = {
+        FechaHoraFinMasivo: null,
+        strFechaHoraFinMasivo: null,
+        OperadorId: 0,
+        leadsId: []
+    };
+    return leads;
+}
+function objleadbyPersona() {
+    var leadsPersona = {
+        personaId: 0,
+        inconcertLeadId: "",
+        leadId: []
+    };
+    return leadsPersona;
+}
+
+function ExportarCSV() {
+
+    var UserLeads = valMultiSelect;
+    var tipoAlumn = tipoAlumno.join(",");
+    var estatusAlumn = estatusAlumno.join(",");
+    var ProgramaEstudioId = $("#cmbProgramaEstudioId").val();
+    var ConSaldo = $("#cmbConSaldo").val();
+    var PeriodoInscripcionId = $("#cmbPeriodoInscripcionId").val();
+    var FechaHoraInicio = $("#FechaHoraInicio").val();
+    var FechaHoraFin = $("#FechaHoraFin").val();
+    var txtSearch = $("#search-field").val();
+
+
+    $.get(AP.urlAP + '/Alumno/Consulta/Index', function (data, status) {
+        AP.Modal.Show();
+        window.location.href = AP.urlAP + '/Alumno/Consulta/ExportarCSV?UserLeads=' + UserLeads + '&tipoAlumno=' + tipoAlumn +
+            '&ProgramaEstudioId=' + ProgramaEstudioId + '&ConSaldo=' + ConSaldo + '&PeriodoInscripcionId=' + PeriodoInscripcionId +
+            '&estatusAlumno=' + estatusAlumn + '&FechaHoraInicio=' + FechaHoraInicio + '&FechaHoraFin=' + FechaHoraFin + '&txtSearch=' + txtSearch;
+        AP.Modal.Hide();
+    });
+}

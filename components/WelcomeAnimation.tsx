@@ -145,23 +145,22 @@ export default function WelcomeAnimation({ onComplete }: WelcomeAnimationProps) 
               >
                 <div className="text-center">
                   <motion.div
-                    className="text-9xl mb-6"
+                    className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-pink-400 to-blue-400 rounded-full flex items-center justify-center"
                     animate={{ 
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 5, -5, 0]
+                      scale: [1, 1.1, 1],
                     }}
                     transition={{ duration: 2, repeat: 1 }}
                   >
-                    👶✨
+                    <span className="text-5xl text-white font-bold">?</span>
                   </motion.div>
 
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="text-5xl md:text-6xl font-bold font-serif bg-gradient-to-r from-pink-600 to-blue-600 bg-clip-text text-transparent"
+                    className="text-5xl md:text-6xl font-bold font-serif text-outlined"
                   >
-                    ¡Un Bebé Viene en Camino!
+                    Un Bebe Viene en Camino
                   </motion.h1>
 
                   {/* Confetti */}
@@ -200,21 +199,21 @@ export default function WelcomeAnimation({ onComplete }: WelcomeAnimationProps) 
               className="text-center max-w-2xl mx-auto"
             >
               <motion.div
-                className="text-9xl mb-6"
+                className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-pink-400 to-blue-400 rounded-full flex items-center justify-center"
                 animate={{ rotate: [0, -10, 10, -10, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                🎊
+                <span className="text-4xl text-white font-bold">!</span>
               </motion.div>
               
-              <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-pink-300">
+              <div className="bg-white/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-pink-300/50">
                 <motion.h2
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 10 }}
-                  className="text-4xl md:text-5xl font-bold font-serif mb-4 bg-gradient-to-r from-pink-600 to-blue-600 bg-clip-text text-transparent"
+                  className="text-4xl md:text-5xl font-bold font-serif mb-4 text-outlined"
                 >
-                  ¡Gracias por venir a mi revelación!
+                  Gracias por venir a mi revelacion
                 </motion.h2>
                 
                 <motion.p
@@ -223,7 +222,7 @@ export default function WelcomeAnimation({ onComplete }: WelcomeAnimationProps) 
                   transition={{ delay: 0.5 }}
                   className="text-2xl md:text-3xl text-purple-600 font-semibold mb-4"
                 >
-                  🎄 ¡Y feliz Navidad! 🎅
+                  Y feliz Navidad
                 </motion.p>
 
                 <motion.div
@@ -232,19 +231,23 @@ export default function WelcomeAnimation({ onComplete }: WelcomeAnimationProps) 
                   transition={{ delay: 1 }}
                   className="flex gap-3 justify-center mt-6"
                 >
-                  {['❤️', '💙', '💚', '💛', '💜'].map((emoji, i) => (
+                  {['rosa', 'azul', 'verde', 'amarillo', 'morado'].map((color, i) => (
                     <motion.span
                       key={i}
-                      className="text-3xl"
+                      className={`w-8 h-8 rounded-full bg-gradient-to-br ${
+                        color === 'rosa' ? 'from-pink-400 to-pink-600' :
+                        color === 'azul' ? 'from-blue-400 to-blue-600' :
+                        color === 'verde' ? 'from-green-400 to-green-600' :
+                        color === 'amarillo' ? 'from-yellow-400 to-yellow-600' :
+                        'from-purple-400 to-purple-600'
+                      }`}
                       animate={{ y: [0, -10, 0] }}
                       transition={{
                         duration: 0.6,
                         repeat: Infinity,
                         delay: i * 0.1,
                       }}
-                    >
-                      {emoji}
-                    </motion.span>
+                    />
                   ))}
                 </motion.div>
               </div>
@@ -260,7 +263,7 @@ export default function WelcomeAnimation({ onComplete }: WelcomeAnimationProps) 
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={onComplete}
-        className="absolute top-6 right-6 z-50 px-6 py-3 bg-white/90 backdrop-blur-md rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-gray-700 font-semibold border-2 border-pink-200"
+        className="absolute top-6 right-6 z-50 px-6 py-3 bg-white/40 backdrop-blur-md rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-gray-700 font-semibold border-2 border-pink-200/50"
       >
         Saltar ⏭️
       </motion.button>

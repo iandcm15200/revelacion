@@ -63,15 +63,15 @@ export default function BackgroundMusic() {
       {/* Botón de control flotante */}
       <button
         onClick={togglePlay}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-pink-400 to-blue-400 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+        className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group hover:scale-110 hover:bg-white/30 transition-all duration-300 shadow-lg"
         aria-label={isPlaying ? 'Pausar música' : 'Reproducir música'}
       >
         {isPlaying ? (
-          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-white drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
             <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
           </svg>
         ) : (
-          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-7 h-7 text-white drop-shadow-md ml-1" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
         )}

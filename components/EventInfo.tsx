@@ -62,9 +62,6 @@ export default function EventInfo() {
 
   return (
     <section id="event-info" className="py-20 px-4 relative overflow-hidden">
-      {/* Decoración de fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-beige-50 to-white pointer-events-none" />
-
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Título */}
         <motion.div
@@ -73,86 +70,72 @@ export default function EventInfo() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
-            <span className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-              Información del Evento
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-outlined">
+            Información del Evento
           </h2>
           <p className="text-gray-600 text-lg">
             ¡Marca tu calendario para este día especial!
           </p>
         </motion.div>
 
-        {/* Contador regresivo */}
+        {/* Contador regresivo estilo Flip Clock */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl mb-12 border border-pink-100"
+          className="mb-12"
         >
-          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-gray-800">
-            ⏰ Cuenta Regresiva
+          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-outlined">
+            Cuenta Regresiva
           </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="flip-clock">
             {/* Días */}
-            <div className="flex flex-col items-center">
-              <motion.div
-                key={timeLeft.days}
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 w-full shadow-lg"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-white text-center">
-                  {String(timeLeft.days).padStart(2, '0')}
+            <div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-number">
+                    {String(timeLeft.days).padStart(2, '0')}
+                  </div>
                 </div>
-              </motion.div>
-              <p className="mt-3 text-gray-600 font-semibold text-sm md:text-base">Días</p>
+              </div>
+              <p className="flip-label">Días</p>
             </div>
 
             {/* Horas */}
-            <div className="flex flex-col items-center">
-              <motion.div
-                key={timeLeft.hours}
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 w-full shadow-lg"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-white text-center">
-                  {String(timeLeft.hours).padStart(2, '0')}
+            <div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-number">
+                    {String(timeLeft.hours).padStart(2, '0')}
+                  </div>
                 </div>
-              </motion.div>
-              <p className="mt-3 text-gray-600 font-semibold text-sm md:text-base">Horas</p>
+              </div>
+              <p className="flip-label">Horas</p>
             </div>
 
             {/* Minutos */}
-            <div className="flex flex-col items-center">
-              <motion.div
-                key={timeLeft.minutes}
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 w-full shadow-lg"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-white text-center">
-                  {String(timeLeft.minutes).padStart(2, '0')}
+            <div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-number">
+                    {String(timeLeft.minutes).padStart(2, '0')}
+                  </div>
                 </div>
-              </motion.div>
-              <p className="mt-3 text-gray-600 font-semibold text-sm md:text-base">Minutos</p>
+              </div>
+              <p className="flip-label">Minutos</p>
             </div>
 
             {/* Segundos */}
-            <div className="flex flex-col items-center">
-              <motion.div
-                key={timeLeft.seconds}
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 w-full shadow-lg"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-white text-center">
-                  {String(timeLeft.seconds).padStart(2, '0')}
+            <div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-number">
+                    {String(timeLeft.seconds).padStart(2, '0')}
+                  </div>
                 </div>
-              </motion.div>
-              <p className="mt-3 text-gray-600 font-semibold text-sm md:text-base">Segundos</p>
+              </div>
+              <p className="flip-label">Segundos</p>
             </div>
           </div>
         </motion.div>
@@ -164,43 +147,28 @@ export default function EventInfo() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
+            className="rounded-3xl p-8 border border-pink-300/40"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">📅 Detalles</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Detalles</h3>
             
-            <div className="space-y-6">
+            <div className="space-y-5">
               {/* Fecha */}
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center text-white text-xl">
-                  📆
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800 mb-1">Fecha</p>
-                  <p className="text-gray-600 capitalize">{formatDate(eventDate)}</p>
-                </div>
+              <div>
+                <p className="font-semibold text-gray-800 mb-1">Fecha</p>
+                <p className="text-gray-600 capitalize">{formatDate(eventDate)}</p>
               </div>
 
               {/* Hora */}
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center text-white text-xl">
-                  🕐
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800 mb-1">Hora</p>
-                  <p className="text-gray-600">{formatTime(eventDate)}</p>
-                </div>
+              <div>
+                <p className="font-semibold text-gray-800 mb-1">Hora</p>
+                <p className="text-gray-600">{formatTime(eventDate)}</p>
               </div>
 
               {/* Ubicación */}
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center text-white text-xl">
-                  📍
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800 mb-1">Ubicación</p>
-                  <p className="text-gray-600">{eventLocation}</p>
-                  <p className="text-sm text-gray-500 mt-1">{eventAddress}</p>
-                </div>
+              <div>
+                <p className="font-semibold text-gray-800 mb-1">Ubicación</p>
+                <p className="text-gray-600">{eventLocation}</p>
+                <p className="text-sm text-gray-500 mt-1">{eventAddress}</p>
               </div>
 
               {/* Botón Google Maps */}
@@ -208,10 +176,10 @@ export default function EventInfo() {
                 href={eventMapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+                className="shimmer-btn shimmer-btn--pink inline-flex items-center gap-2 mt-4"
               >
-                <span>🗺️</span>
-                <span>Abrir en Google Maps</span>
+                <span className="text">Abrir en Google Maps</span>
+                <span className="shimmer" />
               </a>
             </div>
           </motion.div>
@@ -221,9 +189,9 @@ export default function EventInfo() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
+            className="rounded-3xl p-8 border border-pink-300/40"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">🗺️ Cómo Llegar</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Como Llegar</h3>
             
             {/* Contenedor del mapa 3D animado */}
             <div className="relative w-full h-64 md:h-80 bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl overflow-hidden">

@@ -7,17 +7,17 @@ export default function Footer() {
   const spotifyPlaylistId = process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_ID || ''
 
   return (
-    <footer className="bg-gradient-to-b from-white to-beige-100 py-12 px-4 border-t border-pink-100">
+    <footer className="py-12 px-4 border-t border-pink-100/30">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Sobre el evento */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-blue-400 rounded-full flex items-center justify-center text-xl">
-                👶
+              <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-blue-400 rounded-full flex items-center justify-center">
+                <span className="text-white text-lg font-bold">R</span>
               </div>
-              <span className="font-serif font-bold text-xl bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-                Revelación de Género
+              <span className="font-serif font-bold text-xl text-outlined">
+                Revelacion de Genero
               </span>
             </div>
             <p className="text-gray-600 text-sm">
@@ -99,7 +99,7 @@ export default function Footer() {
           <div className="mt-3 flex items-center justify-center gap-2">
             <span className="text-xs text-gray-400">Desarrollado por</span>
             <a
-              href="https://www.instagram.com/voz_eterea"
+              href="https://www.instagram.com/voz_eterea?igsh=NnR6ZHRkYTE0bGYz"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-pink-500 transition-colors font-medium"
