@@ -19,7 +19,7 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
-  // Si ya estÃ¡ registrado, mostrar botÃ³n de continuar
+  // Si ya estñ¡ registrado, mostrar botñ³n de continuar
   const isAlreadyRegistered = !!guest
 
   const {
@@ -50,7 +50,7 @@ export default function LoginPage() {
         name: data.name,
       })
 
-      // Redirigir a la pÃ¡gina principal
+      // Redirigir a la pñ¡gina principal
       router.push('/')
     } catch (err: any) {
       console.error('Error registrando invitado:', err)
@@ -1191,17 +1191,17 @@ export default function LoginPage() {
             
             <h1 className="text-4xl font-bold font-serif mb-2">
               <span className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-                {isAlreadyRegistered ? `Â¡Hola ${guest.name}!` : 'Â¿NiÃ±a o NiÃ±o?'}
+                {isAlreadyRegistered ? `¡Hola ${guest.name}!` : '¿Niña o Niño?'}
               </span>
             </h1>
             <p className="text-gray-600">
               {isAlreadyRegistered
-                ? 'ContinÃºa a la celebraciÃ³n'
+                ? 'Continúa a la celebración'
                 : 'Escribe tu nombre para descubrirlo'}
             </p>
           </div>
 
-          {/* Si ya estÃ¡ registrado */}
+          {/* Si ya estñ¡ registrado */}
           {isAlreadyRegistered ? (
             <div className="space-y-4">
               <div className="p-5 bg-gradient-to-br from-pink-50 to-blue-50 border-2 border-pink-200 rounded-2xl">
@@ -1229,7 +1229,7 @@ export default function LoginPage() {
 
               <button
                 onClick={() => {
-                  if (confirm('Â¿Cambiar de invitado?')) {
+                  if (confirm('¿Cambiar de invitado?')) {
                     clearGuest()
                   }
                 }}
@@ -1258,7 +1258,7 @@ export default function LoginPage() {
                     },
                   })}
                   className="w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-400 focus:border-pink-400 outline-none transition-all"
-                  placeholder="Ej: MarÃ­a GarcÃ­a"
+                  placeholder="Ej: Marñ­a Garcñ­a"
                 />
                 {errors.name && (
                   <motion.p
@@ -1309,13 +1309,13 @@ export default function LoginPage() {
                     Entrando...
                   </span>
                 ) : (
-                  'Â¡Descubrir! ðŸŽ€ðŸ’™'
+                  '¡Descubrir! ðŸŽ€ðŸ’™'
                 )}
               </motion.button>
             </form>
           )}
 
-          {/* Footer con decoraciÃ³n */}
+          {/* Footer con decoraciñ³n */}
           <div className="mt-6 text-center">
             <div className="flex justify-center items-center gap-2 mb-2">
               <span className="text-2xl">ðŸŽˆ</span>
