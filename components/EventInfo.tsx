@@ -19,7 +19,7 @@ export default function EventInfo() {
   })
 
   // Configuración del evento
-  const eventDate = new Date('2024-12-24T18:00:00') // 24 de diciembre, 6:00 PM
+  const eventDate = new Date('2025-12-24T18:00:00') // 24 de diciembre de 2025, 6:00 PM
   const eventLocation = 'Natura Pao Jimenez'
   const eventAddress = 'Loma de San Gabriel, San Juan, 54660 Coyotepec, Méx.'
   const eventMapUrl = 'https://maps.app.goo.gl/F5Yktdf2ifYy5WES7'
