@@ -64,809 +64,956 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-pink-50 via-white to-blue-50">
       {/* Iconos decorativos animados - Ositos */}
       <div className="absolute top-10 left-10 bear-float">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
       <div className="absolute top-20 right-20 bear-float">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
       <div className="absolute bottom-20 left-20 bear-float">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
       {/* Globos */}
       <div className="absolute top-32 left-1/4 balloon-float">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
       <div className="absolute bottom-32 right-1/4 balloon-float">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
       {/* Corazones */}
       <div className="absolute top-1/3 left-12 heart-pulse">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
       <div className="absolute bottom-1/3 right-12 heart-pulse">
-        <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+        <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
       </div>
 
@@ -907,117 +1054,138 @@ export default function LoginPage() {
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="inline-block mb-4"
             >
-              <svg viewBox="0 0 280 320" className="w-48 h-56">
-                {/* Fondo rosa pastel */}
-                <circle cx="140" cy="160" r="135" fill="#FBE4F1" opacity="0.5"/>
-                <circle cx="140" cy="160" r="120" fill="#F8D5E8" opacity="0.3"/>
-
-                {/* Estrellitas decorativas flotantes */}
-                <g className="heart-pulse">
-                  <path d="M 30 50 L 32 56 L 38 57 L 33 61 L 34 67 L 30 64 L 26 67 L 27 61 L 22 57 L 28 56 Z" fill="#FFD700"/>
-                  <path d="M 245 80 L 247 86 L 253 87 L 248 91 L 249 97 L 245 94 L 241 97 L 242 91 L 237 87 L 243 86 Z" fill="#FFD700"/>
-                  <path d="M 250 240 L 252 246 L 258 247 L 253 251 L 254 257 L 250 254 L 246 257 L 247 251 L 242 247 L 248 246 Z" fill="#FFD700"/>
-                  <path d="M 25 230 L 27 236 L 33 237 L 28 241 L 29 247 L 25 244 L 21 247 L 22 241 L 17 237 L 23 236 Z" fill="#FFD700"/>
-                </g>
-
-                {/* Osito estilo Winnie Pooh con colores pastel y pelaje beige */}
-                <g className="bear-sway">
-                  {/* Cuerpo beige */}
-                  <ellipse cx="140" cy="210" rx="45" ry="55" fill="#E5C9A6"/>
-                  <ellipse cx="140" cy="210" rx="38" ry="48" fill="#F5E6D3"/>
+              <svg viewBox="0 0 300 400" className="w-64 h-80">
+                {/* Osito con racimo de globos rosas */}
+                
+                {/* Racimo de globos rosas en tonos pastel */}
+                <g className="balloon-float">
+                  {/* Capa trasera de globos */}
+                  <ellipse cx="150" cy="80" rx="30" ry="35" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="148" cy="75" rx="18" ry="22" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Panza clara */}
-                  <ellipse cx="140" cy="215" rx="28" ry="35" fill="#FFF9F0"/>
+                  <ellipse cx="200" cy="90" rx="28" ry="33" fill="#D8A5B8" opacity="0.9"/>
+                  <ellipse cx="198" cy="85" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cabeza principal beige */}
-                  <circle cx="140" cy="130" r="50" fill="#E5C9A6"/>
-                  <circle cx="140" cy="130" r="45" fill="#F5E6D3"/>
+                  <ellipse cx="100" cy="95" rx="26" ry="31" fill="#F0C5D8" opacity="0.9"/>
+                  <ellipse cx="98" cy="90" rx="15" ry="18" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Orejas beige pastel */}
-                  <g>
-                    <circle cx="105" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="105" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="105" cy="95" r="14" fill="#FFE8D8"/>
-                    
-                    <circle cx="175" cy="95" r="22" fill="#E5C9A6"/>
-                    <circle cx="175" cy="95" r="18" fill="#F5E6D3"/>
-                    <circle cx="175" cy="95" r="14" fill="#FFE8D8"/>
-                  </g>
+                  {/* Capa media de globos */}
+                  <ellipse cx="180" cy="60" rx="32" ry="37" fill="#E0A8C0" opacity="0.95"/>
+                  <ellipse cx="178" cy="55" rx="20" ry="24" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Hocico beige claro */}
-                  <ellipse cx="140" cy="145" rx="30" ry="25" fill="#FFE8D8"/>
-                  <ellipse cx="140" cy="145" rx="25" ry="20" fill="#FFF5EB"/>
+                  <ellipse cx="120" cy="65" rx="30" ry="35" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="118" cy="60" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Nariz */}
-                  <ellipse cx="140" cy="142" rx="8" ry="6" fill="#8B7355"/>
-                  <ellipse cx="137" cy="140" rx="3" ry="2" fill="#A89080" opacity="0.6"/>
+                  <ellipse cx="210" cy="120" rx="27" ry="32" fill="#DDA0B8" opacity="0.9"/>
+                  <ellipse cx="208" cy="115" rx="16" ry="20" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Ojos grandes y tiernos */}
-                  <g>
-                    <circle cx="120" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="122" cy="123" r="3" fill="#FFFFFF"/>
-                    <circle cx="160" cy="125" r="8" fill="#4A3728"/>
-                    <circle cx="162" cy="123" r="3" fill="#FFFFFF"/>
-                  </g>
+                  <ellipse cx="90" cy="130" rx="29" ry="34" fill="#E8B5C8" opacity="0.9"/>
+                  <ellipse cx="88" cy="125" rx="17" ry="21" fill="#FFFFFF" opacity="0.5"/>
                   
-                  {/* Cejas expresivas */}
-                  <path d="M 110 115 Q 115 113 120 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <path d="M 160 115 Q 165 113 170 115" stroke="#8B7355" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Capa frontal - globo central grande */}
+                  <ellipse cx="150" cy="120" rx="38" ry="44" fill="#F0A8C8" opacity="1"/>
+                  <ellipse cx="148" cy="113" rx="24" ry="28" fill="#FFFFFF" opacity="0.7"/>
                   
-                  {/* Mejillas rosadas */}
-                  <circle cx="105" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
-                  <circle cx="175" cy="135" r="8" fill="#FFB6D9" opacity="0.4"/>
+                  <ellipse cx="175" cy="145" rx="30" ry="35" fill="#E8B5C8" opacity="0.95"/>
+                  <ellipse cx="173" cy="140" rx="18" ry="22" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Boca sonriente */}
-                  <path d="M 130 150 Q 140 156 150 150" stroke="#8B7355" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M 140 142 L 140 151" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                  <ellipse cx="125" cy="150" rx="28" ry="33" fill="#F8D5E8" opacity="0.95"/>
+                  <ellipse cx="123" cy="145" rx="17" ry="20" fill="#FFFFFF" opacity="0.6"/>
                   
-                  {/* Brazos beige */}
-                  <ellipse cx="100" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(-25 100 195)"/>
-                  <ellipse cx="100" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(-25 100 195)"/>
-                  
-                  <ellipse cx="180" cy="195" rx="18" ry="40" fill="#E5C9A6" transform="rotate(25 180 195)"/>
-                  <ellipse cx="180" cy="195" rx="14" ry="35" fill="#F5E6D3" transform="rotate(25 180 195)"/>
-                  
-                  {/* Patitas */}
-                  <ellipse cx="120" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="120" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  <ellipse cx="160" cy="260" rx="20" ry="15" fill="#E5C9A6"/>
-                  <ellipse cx="160" cy="260" rx="16" ry="12" fill="#F5E6D3"/>
-                  
-                  {/* Almohadillas rosadas */}
-                  <ellipse cx="115" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="125" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="155" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  <ellipse cx="165" cy="262" rx="4" ry="3" fill="#FFB6D9" opacity="0.6"/>
-                  
-                  {/* Mono rosa pastel */}
-                  <g className="balloon-float">
-                    <ellipse cx="125" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(-30 125 85)"/>
-                    <ellipse cx="155" cy="85" rx="12" ry="8" fill="#F9A8D4" transform="rotate(30 155 85)"/>
-                    <circle cx="140" cy="82" r="6" fill="#FFC9E3"/>
-                    <path d="M 136 82 L 140 78 L 144 82 L 142 86 L 138 86 Z" fill="#FFD700"/>
-                  </g>
+                  {/* Hilos de los globos convergiendo en la mano del osito */}
+                  <path d="M 150 164 Q 145 200 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 175 180 Q 150 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 125 183 Q 135 210 142 240" stroke="#8B7355" strokeWidth="1" fill="none" opacity="0.6"/>
+                  <path d="M 180 97 Q 155 160 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 120 100 Q 135 170 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 200 125 Q 160 180 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  <path d="M 90 163 Q 125 200 142 240" stroke="#8B7355" strokeWidth="0.8" fill="none" opacity="0.5"/>
                 </g>
                 
-                {/* Globitos flotantes */}
-                <g className="balloon-float">
-                  {/* Globo rosa */}
-                  <ellipse cx="50" cy="140" rx="18" ry="22" fill="#F9A8D4"/>
-                  <ellipse cx="48" cy="138" rx="8" ry="10" fill="#FFC9E3" opacity="0.6"/>
-                  <path d="M 50 162 Q 48 172 46 180" stroke="#F9A8D4" strokeWidth="1.5" fill="none"/>
+                {/* Osito beige/marron */}
+                <g className="bear-sway">
+                  {/* Brazo izquierdo sosteniendo globos */}
+                  <ellipse cx="115" cy="250" rx="18" ry="45" fill="#B89A7C" transform="rotate(-35 115 250)"/>
+                  <ellipse cx="115" cy="250" rx="14" ry="40" fill="#C8AA8C" transform="rotate(-35 115 250)"/>
                   
-                  {/* Globo azul */}
-                  <ellipse cx="230" cy="170" rx="18" ry="22" fill="#93C5FD"/>
-                  <ellipse cx="228" cy="168" rx="8" ry="10" fill="#C5E4FF" opacity="0.6"/>
-                  <path d="M 230 192 Q 228 202 226 210" stroke="#93C5FD" strokeWidth="1.5" fill="none"/>
+                  {/* Mano sosteniendo hilos */}
+                  <ellipse cx="135" cy="235" rx="14" ry="16" fill="#B89A7C"/>
+                  <ellipse cx="135" cy="235" rx="10" ry="12" fill="#C8AA8C"/>
                   
-                  {/* Globo beige */}
-                  <ellipse cx="60" cy="240" rx="16" ry="20" fill="#FDE68A"/>
-                  <ellipse cx="58" cy="238" rx="7" ry="9" fill="#FFF9E6" opacity="0.6"/>
-                  <path d="M 60 260 Q 58 268 56 275" stroke="#FDE68A" strokeWidth="1.5" fill="none"/>
+                  {/* Cuerpo */}
+                  <ellipse cx="150" cy="300" rx="48" ry="60" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="300" rx="42" ry="54" fill="#C8AA8C"/>
+                  
+                  {/* Panza clara */}
+                  <ellipse cx="150" cy="310" rx="32" ry="42" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="310" rx="28" ry="38" fill="#F5EFE8"/>
+                  
+                  {/* Piernas */}
+                  <ellipse cx="125" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  <ellipse cx="175" cy="355" rx="20" ry="28" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="355" rx="16" ry="24" fill="#C8AA8C"/>
+                  
+                  {/* Patas con almohadillas */}
+                  <ellipse cx="125" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="125" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  <ellipse cx="175" cy="375" rx="18" ry="12" fill="#B89A7C"/>
+                  <ellipse cx="175" cy="375" rx="14" ry="9" fill="#E8D8C8"/>
+                  
+                  {/* Cabeza */}
+                  <ellipse cx="150" cy="260" rx="42" ry="45" fill="#B89A7C"/>
+                  <ellipse cx="150" cy="260" rx="38" ry="41" fill="#C8AA8C"/>
+                  
+                  {/* Orejas */}
+                  <ellipse cx="120" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="120" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  <ellipse cx="180" cy="235" rx="18" ry="20" fill="#B89A7C"/>
+                  <ellipse cx="180" cy="235" rx="14" ry="16" fill="#E8D8C8"/>
+                  
+                  {/* Hocico */}
+                  <ellipse cx="150" cy="275" rx="24" ry="20" fill="#E8D8C8"/>
+                  <ellipse cx="150" cy="275" rx="20" ry="16" fill="#F5EFE8"/>
+                  
+                  {/* Nariz */}
+                  <ellipse cx="150" cy="270" rx="7" ry="5" fill="#6B5A48"/>
+                  <ellipse cx="147" cy="268" rx="2" ry="1.5" fill="#8B7A68" opacity="0.6"/>
+                  
+                  {/* Ojos tiernos */}
+                  <circle cx="135" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="136" cy="254" r="2" fill="#FFFFFF"/>
+                  <circle cx="165" cy="255" r="5" fill="#4A3828"/>
+                  <circle cx="166" cy="254" r="2" fill="#FFFFFF"/>
+                  
+                  {/* Cejas suaves */}
+                  <path d="M 128 248 Q 133 246 138 247" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  <path d="M 162 247 Q 167 246 172 248" stroke="#8B7355" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  
+                  {/* Mejillas rosadas */}
+                  <circle cx="120" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  <circle cx="180" cy="268" r="8" fill="#F8B5C8" opacity="0.5"/>
+                  
+                  {/* Boca */}
+                  <path d="M 143 278 Q 150 282 157 278" stroke="#6B5A48" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Brazo derecho */}
+                  <ellipse cx="185" cy="295" rx="18" ry="42" fill="#B89A7C" transform="rotate(25 185 295)"/>
+                  <ellipse cx="185" cy="295" rx="14" ry="37" fill="#C8AA8C" transform="rotate(25 185 295)"/>
+                  
+                  {/* Mono rosa en el cuello */}
+                  <g className="heart-pulse">
+                    <path d="M 140 285 L 135 295 L 140 305 L 145 300 L 150 305 L 155 300 L 160 305 L 165 295 L 160 285 Z" fill="#F8B5D8"/>
+                    <ellipse cx="150" cy="290" rx="8" ry="6" fill="#FFD5E8"/>
+                    
+                    {/* Lazos del mono */}
+                    <path d="M 135 295 Q 125 295 120 300 Q 125 305 135 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="128" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                    
+                    <path d="M 165 295 Q 175 295 180 300 Q 175 305 165 305 Z" fill="#F8B5D8" opacity="0.9"/>
+                    <ellipse cx="172" cy="300" rx="6" ry="8" fill="#FFD5E8" opacity="0.7"/>
+                  </g>
                 </g>
               </svg>
+
 
             </motion.div>
             
@@ -1164,4 +1332,5 @@ export default function LoginPage() {
     </div>
   )
 }
+
 
