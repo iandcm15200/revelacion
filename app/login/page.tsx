@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
-import * as anime from 'animejs'
+import { animate, stagger } from 'animejs'
 import { useGuestStore } from '@/store/guestStore'
 import { guestsDB } from '@/lib/supabase'
 
@@ -26,33 +26,33 @@ export default function LoginPage() {
   // Animaciones de iconos
   useEffect(() => {
     // Animación de ositos flotando
-    anime.default({
+    animate({
       targets: '.bear-float',
       translateY: [0, -15, 0],
       easing: 'easeInOutSine',
       duration: 3000,
       loop: true,
-      delay: anime.default.stagger(300)
+      delay: stagger(300)
     })
 
     // Animación de globos
-    anime.default({
+    animate({
       targets: '.balloon-float',
       translateY: [0, -20, 0],
       easing: 'easeInOutSine',
       duration: 2500,
       loop: true,
-      delay: anime.default.stagger(200)
+      delay: stagger(200)
     })
 
     // Animación de corazones
-    anime.default({
+    animate({
       targets: '.heart-pulse',
       scale: [1, 1.15, 1],
       easing: 'easeInOutQuad',
       duration: 1500,
       loop: true,
-      delay: anime.default.stagger(400)
+      delay: stagger(400)
     })
   }, [])
 

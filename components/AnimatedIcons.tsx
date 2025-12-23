@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import * as anime from 'animejs'
+import { animate, stagger } from 'animejs'
 
 export default function AnimatedIcons() {
   const iconsRef = useRef<HTMLDivElement>(null)
@@ -10,7 +10,7 @@ export default function AnimatedIcons() {
     if (!iconsRef.current) return
 
     // Animación del biberón
-    const bottleAnimation = anime.default({
+    const bottleAnimation = animate({
       targets: '.bottle-icon__liquid',
       translateY: [20, -10, 0],
       opacity: [0, 1],
@@ -21,7 +21,7 @@ export default function AnimatedIcons() {
     })
 
     // Animación del chupete
-    anime.default({
+    animate({
       targets: '.pacifier-icon__circle',
       scale: [0.8, 1.1, 1],
       easing: 'easeOutElastic(1, .8)',
@@ -31,17 +31,17 @@ export default function AnimatedIcons() {
     })
 
     // Animación de los globos
-    anime.default({
+    animate({
       targets: '.balloon-icon__balloon',
       translateY: [0, -15, 0],
       easing: 'easeInOutSine',
       duration: 3000,
       loop: true,
-      delay: anime.default.stagger(200)
+      delay: stagger(200)
     })
 
     // Animación del osito
-    anime.default({
+    animate({
       targets: '.teddy-icon__bear',
       rotate: [-5, 5, 0],
       easing: 'easeInOutSine',
@@ -50,7 +50,7 @@ export default function AnimatedIcons() {
     })
 
     // Animación del corazón
-    anime.default({
+    animate({
       targets: '.heart-icon__heart',
       scale: [1, 1.2, 1],
       easing: 'easeInOutQuad',
