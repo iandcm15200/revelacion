@@ -201,100 +201,106 @@ export default function LoginPage() {
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="inline-block mb-4"
             >
-              <svg viewBox="0 0 200 240" className="w-32 h-40">
-                {/* Globos rosa */}
-                <g className="balloon-float">
-                  <ellipse cx="50" cy="30" rx="18" ry="22" fill="#FFB6D9" opacity="0.9"/>
-                  <ellipse cx="50" cy="28" rx="14" ry="18" fill="#FFC9E3"/>
-                  <ellipse cx="48" cy="25" rx="6" ry="8" fill="#FFFFFF" opacity="0.6"/>
-                  <path d="M 50 52 Q 48 65 50 70" stroke="#E8A5C8" strokeWidth="1" fill="none"/>
+              <svg viewBox="0 0 220 240" className="w-36 h-44">
+                {/* Fondo rosa circular */}
+                <circle cx="110" cy="120" r="105" fill="#F8D5E8" opacity="0.6"/>
+                <circle cx="110" cy="120" r="95" fill="#FBE4F1" opacity="0.8"/>
+                
+                {/* Nubes decorativas */}
+                <g opacity="0.9">
+                  <ellipse cx="40" cy="40" rx="18" ry="12" fill="#FFFFFF"/>
+                  <ellipse cx="50" cy="38" rx="15" ry="10" fill="#FFFFFF"/>
+                  <ellipse cx="30" cy="38" rx="12" ry="8" fill="#FFFFFF"/>
                   
-                  <ellipse cx="70" cy="25" rx="16" ry="20" fill="#FFB6D9" opacity="0.9"/>
-                  <ellipse cx="70" cy="23" rx="12" ry="16" fill="#FFC9E3"/>
-                  <ellipse cx="68" cy="21" rx="5" ry="7" fill="#FFFFFF" opacity="0.6"/>
-                  <path d="M 70 45 Q 68 58 70 65" stroke="#E8A5C8" strokeWidth="1" fill="none"/>
+                  <ellipse cx="180" cy="200" rx="18" ry="12" fill="#FFFFFF"/>
+                  <ellipse cx="170" cy="198" rx="15" ry="10" fill="#FFFFFF"/>
+                  <ellipse cx="190" cy="198" rx="12" ry="8" fill="#FFFFFF"/>
                 </g>
 
-                {/* Globos azules */}
-                <g className="balloon-float">
-                  <ellipse cx="150" cy="30" rx="18" ry="22" fill="#A8D5FF" opacity="0.9"/>
-                  <ellipse cx="150" cy="28" rx="14" ry="18" fill="#C5E4FF"/>
-                  <ellipse cx="148" cy="25" rx="6" ry="8" fill="#FFFFFF" opacity="0.6"/>
-                  <path d="M 150 52 Q 152 65 150 70" stroke="#8CC4F0" strokeWidth="1" fill="none"/>
-                  
-                  <ellipse cx="130" cy="25" rx="16" ry="20" fill="#A8D5FF" opacity="0.9"/>
-                  <ellipse cx="130" cy="23" rx="12" ry="16" fill="#C5E4FF"/>
-                  <ellipse cx="128" cy="21" rx="5" ry="7" fill="#FFFFFF" opacity="0.6"/>
-                  <path d="M 130 45 Q 132 58 130 65" stroke="#8CC4F0" strokeWidth="1" fill="none"/>
-                </g>
-
-                {/* Estrellas doradas */}
+                {/* Banderines */}
                 <g className="heart-pulse">
-                  <path d="M 35 15 L 37 20 L 42 20 L 38 23 L 40 28 L 35 25 L 30 28 L 32 23 L 28 20 L 33 20 Z" fill="#FFD700" opacity="0.8"/>
-                  <path d="M 165 15 L 167 20 L 172 20 L 168 23 L 170 28 L 165 25 L 160 28 L 162 23 L 158 20 L 163 20 Z" fill="#FFD700" opacity="0.8"/>
-                  <path d="M 20 45 L 22 48 L 25 48 L 23 50 L 24 53 L 20 51 L 16 53 L 17 50 L 15 48 L 18 48 Z" fill="#FFD700" opacity="0.6"/>
-                  <path d="M 180 45 L 182 48 L 185 48 L 183 50 L 184 53 L 180 51 L 176 53 L 177 50 L 175 48 L 178 48 Z" fill="#FFD700" opacity="0.6"/>
+                  <path d="M 40 60 L 180 100" stroke="#4A3728" strokeWidth="1.5" fill="none"/>
+                  
+                  {/* Banderines rosa */}
+                  <path d="M 55 65 L 55 75 L 65 70 Z" fill="#F9A8D4"/>
+                  <path d="M 85 75 L 85 85 L 95 80 Z" fill="#FFC9E3"/>
+                  <path d="M 145 90 L 145 100 L 155 95 Z" fill="#F9A8D4"/>
+                  
+                  {/* Banderines azules */}
+                  <path d="M 70 70 L 70 80 L 80 75 Z" fill="#93C5FD"/>
+                  <path d="M 115 83 L 115 93 L 125 88 Z" fill="#A8D5FF"/>
+                  <path d="M 165 95 L 165 105 L 175 100 Z" fill="#60A5FA"/>
                 </g>
 
-                {/* Cuerdas de los globos */}
-                <path d="M 50 70 Q 85 90 95 100" stroke="#E8A5C8" strokeWidth="1.5" fill="none" opacity="0.6"/>
-                <path d="M 70 65 Q 92 85 98 95" stroke="#E8A5C8" strokeWidth="1.5" fill="none" opacity="0.6"/>
-                <path d="M 150 70 Q 115 90 105 100" stroke="#8CC4F0" strokeWidth="1.5" fill="none" opacity="0.6"/>
-                <path d="M 130 65 Q 108 85 102 95" stroke="#8CC4F0" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                {/* Estrellas doradas brillantes */}
+                <g className="heart-pulse">
+                  <path d="M 50 180 L 53 188 L 61 190 L 54 196 L 56 204 L 50 200 L 44 204 L 46 196 L 39 190 L 47 188 Z" fill="#FFD700"/>
+                  <ellipse cx="50" cy="192" rx="4" ry="4" fill="#FFF9E6" opacity="0.8"/>
+                  
+                  <path d="M 170 70 L 173 78 L 181 80 L 174 86 L 176 94 L 170 90 L 164 94 L 166 86 L 159 80 L 167 78 Z" fill="#FFD700"/>
+                  <ellipse cx="170" cy="82" rx="4" ry="4" fill="#FFF9E6" opacity="0.8"/>
+                  
+                  <path d="M 190 155 L 192 160 L 197 161 L 193 165 L 194 170 L 190 167 L 186 170 L 187 165 L 183 161 L 188 160 Z" fill="#FFD700"/>
+                  <ellipse cx="190" cy="163" rx="3" ry="3" fill="#FFF9E6" opacity="0.8"/>
+                  
+                  <path d="M 75 30 L 77 35 L 82 36 L 78 40 L 79 45 L 75 42 L 71 45 L 72 40 L 68 36 L 73 35 Z" fill="#FFD700"/>
+                  <ellipse cx="75" cy="38" rx="3" ry="3" fill="#FFF9E6" opacity="0.8"/>
+                </g>
 
-                {/* Osito de peluche */}
-                <g>
+                {/* Bolsa/Pañuelo de regalo celeste */}
+                <g className="balloon-float">
+                  {/* Nudo superior */}
+                  <ellipse cx="90" cy="100" rx="8" ry="12" fill="#A8D5FF" transform="rotate(-30 90 100)"/>
+                  <ellipse cx="130" cy="100" rx="8" ry="12" fill="#A8D5FF" transform="rotate(30 130 100)"/>
+                  <ellipse cx="110" cy="95" rx="12" ry="8" fill="#B8E1FF"/>
+                  
+                  {/* Bolsa principal */}
+                  <path d="M 75 110 Q 70 140 75 170 Q 80 195 110 200 Q 140 195 145 170 Q 150 140 145 110 Z" fill="#A8D5FF"/>
+                  <path d="M 78 112 Q 73 140 78 168 Q 82 190 110 195 Q 138 190 142 168 Q 147 140 142 112 Z" fill="#C5E4FF"/>
+                  <path d="M 85 120 Q 82 145 85 165 Q 88 180 110 185 Q 132 180 135 165 Q 138 145 135 120 Z" fill="#D5ECFF"/>
+                  
+                  {/* Brillos en la bolsa */}
+                  <ellipse cx="95" cy="135" rx="15" ry="25" fill="#E8F4FF" opacity="0.6"/>
+                  <ellipse cx="92" cy="130" rx="8" ry="15" fill="#FFFFFF" opacity="0.5"/>
+                </g>
+
+                {/* Osito azul bebé dentro de la bolsa */}
+                <g className="bear-sway">
                   {/* Orejas */}
-                  <ellipse cx="75" cy="105" rx="12" ry="14" fill="#D4A574"/>
-                  <ellipse cx="75" cy="105" rx="8" ry="10" fill="#E5C9A6"/>
-                  <ellipse cx="125" cy="105" rx="12" ry="14" fill="#D4A574"/>
-                  <ellipse cx="125" cy="105" rx="8" ry="10" fill="#E5C9A6"/>
+                  <circle cx="95" cy="135" r="9" fill="#6BA5D6"/>
+                  <circle cx="95" cy="135" r="6" fill="#93C5FD"/>
+                  <circle cx="125" cy="135" r="9" fill="#6BA5D6"/>
+                  <circle cx="125" cy="135" r="6" fill="#93C5FD"/>
                   
                   {/* Cabeza */}
-                  <ellipse cx="100" cy="115" rx="28" ry="26" fill="#D4A574"/>
-                  <ellipse cx="100" cy="115" rx="24" ry="22" fill="#E5C9A6"/>
+                  <circle cx="110" cy="145" r="22" fill="#6BA5D6"/>
+                  <circle cx="110" cy="145" r="18" fill="#93C5FD"/>
                   
                   {/* Hocico */}
-                  <ellipse cx="100" cy="125" rx="16" ry="14" fill="#F5E6D3"/>
-                  <ellipse cx="100" cy="125" rx="12" ry="10" fill="#FFF4E6"/>
+                  <ellipse cx="110" cy="152" rx="13" ry="11" fill="#E8F4FF"/>
+                  <ellipse cx="110" cy="152" rx="10" ry="8" fill="#FFFFFF"/>
                   
                   {/* Nariz */}
-                  <ellipse cx="100" cy="122" rx="5" ry="4" fill="#4A3728"/>
-                  <ellipse cx="98" cy="121" rx="2" ry="1.5" fill="#6B5D52" opacity="0.6"/>
+                  <ellipse cx="110" cy="150" rx="4" ry="3" fill="#4A3728"/>
+                  <ellipse cx="108.5" cy="149" rx="1.5" ry="1" fill="#7A6D68" opacity="0.6"/>
                   
-                  {/* Boca */}
-                  <path d="M 100 122 L 100 128" stroke="#4A3728" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M 92 130 Q 100 134 108 130" stroke="#4A3728" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  {/* Ojos cerrados (dormido/feliz) */}
+                  <path d="M 100 144 Q 103 146 106 144" stroke="#4A3728" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  <path d="M 114 144 Q 117 146 120 144" stroke="#4A3728" strokeWidth="2" fill="none" strokeLinecap="round"/>
                   
-                  {/* Ojos */}
-                  <ellipse cx="88" cy="115" rx="4" ry="5" fill="#4A3728"/>
-                  <ellipse cx="87" cy="113" rx="1.5" ry="2" fill="#FFFFFF" opacity="0.8"/>
-                  <ellipse cx="112" cy="115" rx="4" ry="5" fill="#4A3728"/>
-                  <ellipse cx="111" cy="113" rx="1.5" ry="2" fill="#FFFFFF" opacity="0.8"/>
+                  {/* Mejillas rosadas */}
+                  <circle cx="95" cy="150" r="4" fill="#FFB6D9" opacity="0.5"/>
+                  <circle cx="125" cy="150" r="4" fill="#FFB6D9" opacity="0.5"/>
                   
-                  {/* Cuerpo */}
-                  <ellipse cx="100" cy="165" rx="30" ry="32" fill="#D4A574"/>
-                  <ellipse cx="100" cy="165" rx="26" ry="28" fill="#E5C9A6"/>
-                  <ellipse cx="100" cy="170" rx="18" ry="20" fill="#F5E6D3"/>
+                  {/* Boca sonriente */}
+                  <path d="M 104 156 Q 110 160 116 156" stroke="#4A3728" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
                   
-                  {/* Brazos */}
-                  <ellipse cx="70" cy="155" rx="10" ry="18" fill="#D4A574" transform="rotate(-20 70 155)"/>
-                  <ellipse cx="70" cy="155" rx="7" ry="14" fill="#E5C9A6" transform="rotate(-20 70 155)"/>
-                  <ellipse cx="130" cy="155" rx="10" ry="18" fill="#D4A574" transform="rotate(20 130 155)"/>
-                  <ellipse cx="130" cy="155" rx="7" ry="14" fill="#E5C9A6" transform="rotate(20 130 155)"/>
+                  {/* Moño/Corona rosa en la cabeza */}
+                  <path d="M 100 130 Q 98 128 96 130 Q 98 132 100 131 Q 102 132 104 131 Q 106 132 108 131 Q 110 132 112 131 Q 114 132 116 130 Q 114 128 112 129 Q 110 128 108 129 Q 106 128 104 129 Q 102 128 100 130 Z" fill="#F9A8D4"/>
+                  <ellipse cx="108" cy="129.5" rx="5" ry="3" fill="#FFC9E3"/>
                   
-                  {/* Patas */}
-                  <ellipse cx="85" cy="200" rx="12" ry="16" fill="#D4A574"/>
-                  <ellipse cx="85" cy="200" rx="9" ry="12" fill="#E5C9A6"/>
-                  <ellipse cx="85" cy="210" rx="10" ry="6" fill="#F5E6D3"/>
-                  
-                  <ellipse cx="115" cy="200" rx="12" ry="16" fill="#D4A574"/>
-                  <ellipse cx="115" cy="200" rx="9" ry="12" fill="#E5C9A6"/>
-                  <ellipse cx="115" cy="210" rx="10" ry="6" fill="#F5E6D3"/>
-                  
-                  {/* Moño azul */}
-                  <path d="M 95 100 Q 90 98 88 102 Q 90 105 95 103 Q 100 105 105 103 Q 110 105 112 102 Q 110 98 105 100 Q 100 95 95 100 Z" fill="#93C5FD"/>
-                  <ellipse cx="100" cy="101" rx="4" ry="3" fill="#60A5FA"/>
+                  {/* Estrellita en el moño */}
+                  <path d="M 108 126 L 109 128 L 111 128 L 109.5 129.5 L 110 131.5 L 108 130 L 106 131.5 L 106.5 129.5 L 105 128 L 107 128 Z" fill="#FFD700"/>
                 </g>
               </svg>
             </motion.div>
