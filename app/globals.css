@@ -65,6 +65,11 @@ body {
   50% { transform: rotate(5deg); }
 }
 
+.bear-sway {
+  animation: float 4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
 @keyframes shimmer {
   0% { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }

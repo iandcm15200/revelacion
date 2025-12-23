@@ -196,12 +196,143 @@ export default function LoginPage() {
           {/* Header con osito grande */}
           <div className="text-center mb-8">
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+              initial={{ scale: 0, rotate: -10 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 150, damping: 12 }}
               className="inline-block mb-4"
             >
-              <svg viewBox="0 0 200 240" className="w-32 h-40">
+              {/* Imagen personalizada - Osito con globos */}
+              <div className="relative w-40 h-48 mx-auto">
+                <svg viewBox="0 0 200 280" className="w-full h-full drop-shadow-xl">
+                  {/* Racimo de globos rosa - múltiples capas */}
+                  <g className="balloon-float">
+                    {/* Capa trasera */}
+                    <ellipse cx="80" cy="35" rx="16" ry="20" fill="#E8B4D4" stroke="#C9859F" strokeWidth="1.5" opacity="0.85"/>
+                    <ellipse cx="80" cy="32" rx="12" ry="16" fill="#F5D4E8"/>
+                    <ellipse cx="77" cy="28" rx="6" ry="9" fill="#FFFFFF" opacity="0.5"/>
+                    
+                    <ellipse cx="120" cy="35" rx="16" ry="20" fill="#E8B4D4" stroke="#C9859F" strokeWidth="1.5" opacity="0.85"/>
+                    <ellipse cx="120" cy="32" rx="12" ry="16" fill="#F5D4E8"/>
+                    <ellipse cx="117" cy="28" rx="6" ry="9" fill="#FFFFFF" opacity="0.5"/>
+                    
+                    {/* Capa media */}
+                    <ellipse cx="60" cy="50" rx="18" ry="23" fill="#DDA5C8" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="60" cy="47" rx="14" ry="19" fill="#F0C4DD"/>
+                    <ellipse cx="57" cy="43" rx="7" ry="10" fill="#FFFFFF" opacity="0.6"/>
+                    
+                    <ellipse cx="100" cy="45" rx="20" ry="25" fill="#D99BBF" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="100" cy="42" rx="16" ry="21" fill="#EEBDD6"/>
+                    <ellipse cx="97" cy="38" rx="8" ry="11" fill="#FFFFFF" opacity="0.7"/>
+                    
+                    <ellipse cx="140" cy="50" rx="18" ry="23" fill="#DDA5C8" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="140" cy="47" rx="14" ry="19" fill="#F0C4DD"/>
+                    <ellipse cx="137" cy="43" rx="7" ry="10" fill="#FFFFFF" opacity="0.6"/>
+                    
+                    {/* Capa frontal central */}
+                    <ellipse cx="70" cy="65" rx="19" ry="24" fill="#D99BBF" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="70" cy="62" rx="15" ry="20" fill="#EEBDD6"/>
+                    <ellipse cx="67" cy="58" rx="8" ry="11" fill="#FFFFFF" opacity="0.7"/>
+                    
+                    <ellipse cx="100" cy="70" rx="21" ry="26" fill="#CC88B3" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="100" cy="67" rx="17" ry="22" fill="#E8B4D4"/>
+                    <ellipse cx="97" cy="62" rx="9" ry="12" fill="#FFFFFF" opacity="0.8"/>
+                    
+                    <ellipse cx="130" cy="65" rx="19" ry="24" fill="#D99BBF" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="130" cy="62" rx="15" ry="20" fill="#EEBDD6"/>
+                    <ellipse cx="127" cy="58" rx="8" ry="11" fill="#FFFFFF" opacity="0.7"/>
+                    
+                    {/* Globos superiores pequeños */}
+                    <ellipse cx="90" cy="25" rx="14" ry="18" fill="#E8B4D4" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="90" cy="23" rx="10" ry="14" fill="#F5D4E8"/>
+                    <ellipse cx="88" cy="20" rx="5" ry="7" fill="#FFFFFF" opacity="0.5"/>
+                    
+                    <ellipse cx="110" cy="25" rx="14" ry="18" fill="#DDA5C8" stroke="#C9859F" strokeWidth="1.5"/>
+                    <ellipse cx="110" cy="23" rx="10" ry="14" fill="#F0C4DD"/>
+                    <ellipse cx="108" cy="20" rx="5" ry="7" fill="#FFFFFF" opacity="0.5"/>
+                    
+                    {/* Cuerdas de globos convergiendo */}
+                    <path d="M 60 73 Q 80 105 95 130" stroke="#C9A189" strokeWidth="1" fill="none" opacity="0.4"/>
+                    <path d="M 70 89 Q 85 110 98 130" stroke="#C9A189" strokeWidth="1" fill="none" opacity="0.4"/>
+                    <path d="M 80 58 Q 92 95 100 130" stroke="#C9A189" strokeWidth="1" fill="none" opacity="0.4"/>
+                    <path d="M 100 96 Q 100 115 100 130" stroke="#C9A189" strokeWidth="1.2" fill="none" opacity="0.5"/>
+                    <path d="M 120 58 Q 108 95 102 130" stroke="#C9A189" strokeWidth="1" fill="none" opacity="0.4"/>
+                    <path d="M 130 89 Q 112 110 105 130" stroke="#C9A189" strokeWidth="1" fill="none" opacity="0.4"/>
+                    <path d="M 140 73 Q 115 105 108 130" stroke="#C9A189" strokeWidth="1" fill="none" opacity="0.4"/>
+                  </g>
+
+                  {/* Osito de peluche con textura */}
+                  <g className="bear-sway">
+                    {/* Brazo izquierdo sosteniendo cuerdas */}
+                    <ellipse cx="75" cy="145" rx="11" ry="20" fill="#C9A189" transform="rotate(-35 75 145)"/>
+                    <ellipse cx="75" cy="145" rx="8" ry="16" fill="#D4B49A" transform="rotate(-35 75 145)"/>
+                    <ellipse cx="73" cy="140" rx="5" ry="10" fill="#E5C9A6" transform="rotate(-35 75 145)"/>
+                    <circle cx="70" cy="135" r="6" fill="#D4B49A"/>
+                    <circle cx="70" cy="135" r="4" fill="#E5C9A6"/>
+                    
+                    {/* Orejas */}
+                    <ellipse cx="80" cy="135" rx="11" ry="13" fill="#C9A189"/>
+                    <ellipse cx="80" cy="135" rx="7" ry="9" fill="#E5C9A6"/>
+                    <ellipse cx="120" cy="135" rx="11" ry="13" fill="#C9A189"/>
+                    <ellipse cx="120" cy="135" rx="7" ry="9" fill="#E5C9A6"/>
+                    
+                    {/* Cabeza */}
+                    <ellipse cx="100" cy="150" rx="26" ry="24" fill="#C9A189"/>
+                    <ellipse cx="100" cy="150" rx="22" ry="20" fill="#D4B49A"/>
+                    
+                    {/* Hocico */}
+                    <ellipse cx="100" cy="160" rx="15" ry="13" fill="#F5E6D3"/>
+                    <ellipse cx="100" cy="160" rx="11" ry="9" fill="#FFF4E6"/>
+                    
+                    {/* Nariz */}
+                    <ellipse cx="100" cy="157" rx="4" ry="3.5" fill="#4A3728"/>
+                    <ellipse cx="98.5" cy="156" rx="1.5" ry="1.2" fill="#6B5D52" opacity="0.6"/>
+                    
+                    {/* Boca */}
+                    <path d="M 100 157 L 100 163" stroke="#4A3728" strokeWidth="1.8" strokeLinecap="round"/>
+                    <path d="M 93 165 Q 100 169 107 165" stroke="#4A3728" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+                    
+                    {/* Ojos */}
+                    <ellipse cx="90" cy="150" rx="3.5" ry="4.5" fill="#4A3728"/>
+                    <ellipse cx="89" cy="148.5" rx="1.3" ry="1.8" fill="#FFFFFF" opacity="0.9"/>
+                    <ellipse cx="110" cy="150" rx="3.5" ry="4.5" fill="#4A3728"/>
+                    <ellipse cx="109" cy="148.5" rx="1.3" ry="1.8" fill="#FFFFFF" opacity="0.9"/>
+                    
+                    {/* Mejillas rosadas */}
+                    <ellipse cx="82" cy="158" rx="5" ry="3" fill="#F5B6D4" opacity="0.4"/>
+                    <ellipse cx="118" cy="158" rx="5" ry="3" fill="#F5B6D4" opacity="0.4"/>
+                    
+                    {/* Cuerpo */}
+                    <ellipse cx="100" cy="195" rx="28" ry="30" fill="#C9A189"/>
+                    <ellipse cx="100" cy="195" rx="24" ry="26" fill="#D4B49A"/>
+                    <ellipse cx="100" cy="200" rx="16" ry="18" fill="#F5E6D3"/>
+                    <ellipse cx="100" cy="200" rx="12" ry="14" fill="#FFF4E6"/>
+                    
+                    {/* Brazo derecho */}
+                    <ellipse cx="125" cy="185" rx="11" ry="20" fill="#C9A189" transform="rotate(25 125 185)"/>
+                    <ellipse cx="125" cy="185" rx="8" ry="16" fill="#D4B49A" transform="rotate(25 125 185)"/>
+                    <circle cx="130" cy="200" r="6" fill="#D4B49A"/>
+                    <circle cx="130" cy="200" r="4" fill="#E5C9A6"/>
+                    
+                    {/* Piernas */}
+                    <ellipse cx="85" cy="230" rx="12" ry="18" fill="#C9A189"/>
+                    <ellipse cx="85" cy="230" rx="9" ry="14" fill="#D4B49A"/>
+                    <ellipse cx="85" cy="242" rx="10" ry="7" fill="#F5E6D3"/>
+                    <ellipse cx="85" cy="242" rx="7" ry="5" fill="#FFF4E6"/>
+                    
+                    <ellipse cx="115" cy="230" rx="12" ry="18" fill="#C9A189"/>
+                    <ellipse cx="115" cy="230" rx="9" ry="14" fill="#D4B49A"/>
+                    <ellipse cx="115" cy="242" rx="10" ry="7" fill="#F5E6D3"/>
+                    <ellipse cx="115" cy="242" rx="7" ry="5" fill="#FFF4E6"/>
+                    
+                    {/* Moño rosa en el cuello */}
+                    <path d="M 88 175 Q 82 173 80 177 Q 82 181 88 179 Q 94 181 100 179 Q 106 181 112 179 Q 118 181 120 177 Q 118 173 112 175 Q 106 171 100 173 Q 94 171 88 175 Z" fill="#F5B6D4"/>
+                    <path d="M 88 175 Q 82 173 80 177 Q 82 181 88 179 Q 94 181 100 179" fill="#E8A5C8"/>
+                    <ellipse cx="100" cy="176" rx="5" ry="4" fill="#DDA5C8"/>
+                    <path d="M 97 174 Q 100 176 103 174" stroke="#FFFFFF" strokeWidth="0.8" fill="none" opacity="0.5"/>
+                  </g>
+                </svg>
+              </div>
+            </motion.div>
                 {/* Globos rosa */}
                 <g className="balloon-float">
                   <ellipse cx="50" cy="30" rx="18" ry="22" fill="#FFB6D9" opacity="0.9"/>
