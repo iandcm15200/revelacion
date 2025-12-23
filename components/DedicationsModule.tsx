@@ -58,9 +58,9 @@ export default function DedicationsModule() {
 
       // Obtener nombres de invitados
       const { data: guestsData } = await guestsDB.getAll()
-      const guestsMap = new Map(guestsData?.map(g => [g.id, g.name]))
+      const guestsMap = new Map((guestsData as any[])?.map((g: any) => [g.id, g.name]))
 
-      const dedicationsWithGuests = dedicationsData?.map(d => ({
+      const dedicationsWithGuests = (dedicationsData as any[])?.map((d: any) => ({
         ...d,
         guests: { name: guestsMap.get(d.guest_id) || 'Anónimo' }
       })) || []

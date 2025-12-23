@@ -32,8 +32,8 @@ export default function VotingModule() {
 
       if (error) throw error
 
-      const girls = data?.filter((v) => v.team === 'girl').length || 0
-      const boys = data?.filter((v) => v.team === 'boy').length || 0
+      const girls = (data as any[])?.filter((v: any) => v.team === 'girl').length || 0
+      const boys = (data as any[])?.filter((v: any) => v.team === 'boy').length || 0
       setVotes(girls, boys)
     } catch (error) {
       console.error('Error cargando votos:', error)

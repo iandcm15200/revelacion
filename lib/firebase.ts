@@ -93,6 +93,24 @@ export const votesDB = {
     }
   },
 
+  getByGuestId: async (guestId: string) => {
+    try {
+      const votesRef = ref(database, 'votes')
+      const snapshot = await get(votesRef)
+      if (snapshot.exists()) {
+        const data = Object.values(snapshot.val()) as any[]
+        const vote = data.find((v: any) => v.guest_id === guestId)
+        if (vote) {
+          return { data: vote, error: null }
+        }
+      }
+      return { data: null, error: null }
+    } catch (error) {
+      console.error('Error getting vote by guest:', error)
+      return { data: null, error }
+    }
+  },
+
   subscribe: (callback: (data: any[]) => void) => {
     const votesRef = ref(database, 'votes')
     const unsubscribe = onValue(votesRef, (snapshot) => {
