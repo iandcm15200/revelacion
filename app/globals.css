@@ -35,6 +35,36 @@ body {
   50% { transform: translateY(-20px); }
 }
 
+@keyframes bear-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes balloon-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes bottle-fill {
+  0%, 100% { transform: translateY(20px); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+
 @keyframes shimmer {
   0% { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }
@@ -42,6 +72,46 @@ body {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+.bear-float {
+  animation: bear-float 3s ease-in-out infinite;
+}
+
+.balloon-float {
+  animation: balloon-float 2.5s ease-in-out infinite;
+}
+
+.heart-pulse {
+  animation: heart-pulse 1.5s ease-in-out infinite;
+}
+
+.bottle-icon__liquid {
+  animation: bottle-fill 1.5s ease-in-out infinite alternate;
+}
+
+.pacifier-icon__circle {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.balloon-icon__balloon {
+  animation: balloon-float 3s ease-in-out infinite;
+}
+
+.balloon-icon__balloon:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.balloon-icon__balloon:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.teddy-icon__bear {
+  animation: sway 2.5s ease-in-out infinite;
+}
+
+.heart-icon__heart {
+  animation: heart-pulse 1.5s ease-in-out infinite;
 }
 
 .animate-shimmer {

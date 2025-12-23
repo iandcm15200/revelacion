@@ -1,10 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
-import { animate, stagger } from 'animejs'
 import { useGuestStore } from '@/store/guestStore'
 import { guestsDB } from '@/lib/supabase'
 
@@ -22,39 +21,6 @@ export default function LoginPage() {
 
   // Si ya está registrado, mostrar botón de continuar
   const isAlreadyRegistered = !!guest
-
-  // Animaciones de iconos
-  useEffect(() => {
-    // Animación de ositos flotando
-    animate({
-      targets: '.bear-float',
-      translateY: [0, -15, 0],
-      easing: 'easeInOutSine',
-      duration: 3000,
-      loop: true,
-      delay: stagger(300)
-    })
-
-    // Animación de globos
-    animate({
-      targets: '.balloon-float',
-      translateY: [0, -20, 0],
-      easing: 'easeInOutSine',
-      duration: 2500,
-      loop: true,
-      delay: stagger(200)
-    })
-
-    // Animación de corazones
-    animate({
-      targets: '.heart-pulse',
-      scale: [1, 1.15, 1],
-      easing: 'easeInOutQuad',
-      duration: 1500,
-      loop: true,
-      delay: stagger(400)
-    })
-  }, [])
 
   const {
     register,

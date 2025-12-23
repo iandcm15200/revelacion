@@ -1,67 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { animate, stagger } from 'animejs'
+import { useRef } from 'react'
 
 export default function AnimatedIcons() {
   const iconsRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!iconsRef.current) return
-
-    // Animación del biberón
-    const bottleAnimation = animate({
-      targets: '.bottle-icon__liquid',
-      translateY: [20, -10, 0],
-      opacity: [0, 1],
-      easing: 'easeInOutQuad',
-      duration: 1500,
-      loop: true,
-      direction: 'alternate'
-    })
-
-    // Animación del chupete
-    animate({
-      targets: '.pacifier-icon__circle',
-      scale: [0.8, 1.1, 1],
-      easing: 'easeOutElastic(1, .8)',
-      duration: 2000,
-      loop: true,
-      delay: 300
-    })
-
-    // Animación de los globos
-    animate({
-      targets: '.balloon-icon__balloon',
-      translateY: [0, -15, 0],
-      easing: 'easeInOutSine',
-      duration: 3000,
-      loop: true,
-      delay: stagger(200)
-    })
-
-    // Animación del osito
-    animate({
-      targets: '.teddy-icon__bear',
-      rotate: [-5, 5, 0],
-      easing: 'easeInOutSine',
-      duration: 2500,
-      loop: true
-    })
-
-    // Animación del corazón
-    animate({
-      targets: '.heart-icon__heart',
-      scale: [1, 1.2, 1],
-      easing: 'easeInOutQuad',
-      duration: 1500,
-      loop: true
-    })
-
-    return () => {
-      bottleAnimation.pause()
-    }
-  }, [])
 
   return (
     <div ref={iconsRef} className="py-16 bg-gradient-to-b from-pink-50/30 to-blue-50/30">
