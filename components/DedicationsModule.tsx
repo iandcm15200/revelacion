@@ -33,6 +33,7 @@ export default function DedicationsModule() {
     try {
       const { error } = await dedicationsDB.insert({
         guest_id: guest.id,
+        guest_name: guest.name,
         message: data.message,
         approved: true,
       })
@@ -62,7 +63,7 @@ export default function DedicationsModule() {
 
       const dedicationsWithGuests = (dedicationsData as any[])?.map((d: any) => ({
         ...d,
-        guests: { name: guestsMap.get(d.guest_id) || 'Anónimo' }
+        guests: { name: guestsMap.get(d.guest_id) || d.guest_name || 'Anónimo' }
       })) || []
 
       setDedications(dedicationsWithGuests)
