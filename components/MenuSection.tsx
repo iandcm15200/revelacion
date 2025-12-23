@@ -4,23 +4,19 @@ import { motion } from 'framer-motion'
 
 const menuItems = {
   entradas: [
-    { name: 'Ensalada Primavera', description: 'Mix de lechugas con vinagreta de frutas' },
-    { name: 'Brochetas Caprese', description: 'Tomate, mozzarella y albahaca fresca' },
+    { name: 'Ensalada de Manzana', description: 'Fresca y deliciosa' },
   ],
   platosFuertes: [
-    { name: 'Pollo a la Parrilla', description: 'Con vegetales asados y salsa especial' },
-    { name: 'Pasta Alfredo', description: 'Fetuccini en salsa cremosa' },
-    { name: 'Arroz con Camarones', description: 'Arroz amarillo con camarones al ajillo' },
+    { name: 'Pierna al Horno', description: 'Jugosa y perfectamente sazonada' },
+    { name: 'Lomo al Horno', description: 'Tierno y con especias selectas' },
   ],
   postres: [
-    { name: 'Pastel de Revelación', description: 'Sorpresa de género en el interior' },
-    { name: 'Mini Cupcakes', description: 'Surtido rosa y azul' },
-    { name: 'Gelatina de Frutas', description: 'Fresca y colorida' },
+    { name: 'Sorpresa', description: '¡Será una deliciosa sorpresa!' },
   ],
   bebidas: [
-    { name: 'Limonada Natural', description: 'Con hierbabuena fresca' },
-    { name: 'Ponche de Frutas', description: 'Sin alcohol' },
-    { name: 'Café y Té', description: 'Servicio continuo' },
+    { name: 'Cerveza', description: 'Fría y refrescante' },
+    { name: 'Ponche', description: 'Tradicional y delicioso' },
+    { name: 'Refresco', description: 'Variedad de sabores' },
   ],
 }
 
